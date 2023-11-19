@@ -29,7 +29,7 @@ const Footer = () => {
         setContact({});
         // error.message; // 'An error has occurred: 404'
       });
-      fetchData("/recent-trips")
+    fetchData("/recent-trips")
       .then((data) => {
         // text; // => 'Page not found'
         setTrips(data);
@@ -38,24 +38,24 @@ const Footer = () => {
         setTrips({});
         // error.message; // 'An error has occurred: 404'
       });
-      // fetchData("/social")
-      // .then((data) => {
-      //   // text; // => 'Page not found'
-      //   setSocial(data);
-      // })
-      // .catch((error) => {
-      //   setSocial({});
-      //   // error.message; // 'An error has occurred: 404'
-      // });
+    // fetchData("/social")
+    // .then((data) => {
+    //   // text; // => 'Page not found'
+    //   setSocial(data);
+    // })
+    // .catch((error) => {
+    //   setSocial({});
+    //   // error.message; // 'An error has occurred: 404'
+    // });
   }, []);
   return (
     <>
       <div className="footer">
         <div className="container">
           <ul className="widget">
-            <Awards data={award}/>
-            <Contact data={contact}/>
-            <RecentTrips data={recent-trips.recentTrips}/>
+            <Awards data={award} />
+            <Contact data={contact} />
+            <RecentTrips data={trips} />
           </ul>
           {/* <div className="footer__bar">
             <div className="footer__bar_wrapper">
