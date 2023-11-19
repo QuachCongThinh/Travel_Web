@@ -1,0 +1,142 @@
+@import "../../style/all.scss";
+
+.navbar {
+  display: flex;
+  padding: 20px;
+  margin-top: 6px;
+}
+.navbar__logo {
+  img {
+    width: 92px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+}
+.navbar__menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+  ul {
+    display: flex;
+    margin-right: 20px;
+    
+    li {
+      position: relative;
+      list-style: none;
+      padding: 0 20px;
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: 13px;
+        transition: all 0.3s;
+        display: block;
+      }
+    }
+    li:hover .header__menu__dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .header__menu__dropdown {
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: -20px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    width: 240px;
+    padding: 5px 0;
+    z-index: 9;
+    transition: all 0.2s ease;
+    line-height: 28px;
+    opacity: 0;
+    visibility: hidden;
+
+    li {
+      .link__menu {
+        color: #000;
+        font-size: 13px;
+        padding: 5px 6px;
+      }
+      .link_menu {
+        color: #000;
+        font-size: 13px;
+        padding: 5px 6px;
+      }
+      :hover {
+        color: #ff4a52;
+      }
+    }
+    li:hover .header__menu__horizontal {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .header__menu__horizontal {
+    border-radius: 5px;
+    position: absolute;
+    margin-left: 222px;
+    top: -5px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    width: 230px;
+    padding: 5px 0;
+    transition: all 0.2s ease;
+    line-height: 28px;
+    opacity: 0;
+    visibility: hidden;
+
+    li {
+      a {
+        color: #000;
+        font-size: 13px;
+        padding: 5px 3px;
+
+        &::after {
+          content: "";
+        }
+      }
+      :hover {
+        color: #ff4a52;
+      }
+    }
+  }
+  .header__cart {
+    display: flex;
+    margin-right: 20px;
+    position: relative;
+    align-items: center;
+
+    svg {
+      cursor: pointer;
+      color: #fff;
+      margin-right: 5px;
+      font-size: 17px;
+    }
+    .logo__cart {
+      display: flex;
+      align-items: center;
+      position: relative;
+      span {
+        position: absolute;
+        color: #fff;
+        font-size: 10px;
+        background: #ff4a52;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        text-align: center;
+        top: -5px;
+        left: 13px;
+        line-height: 14px;
+      }
+    }
+  }
+}
