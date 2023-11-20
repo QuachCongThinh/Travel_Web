@@ -305,6 +305,6 @@ app.get("/articles", (req, res) => {
   });
 });
 
-app.listen(port, host, (req, res) => {
+app.listen(port, (req, res) => {
   console.log(`Example app listening on port ${port}`);
 });
