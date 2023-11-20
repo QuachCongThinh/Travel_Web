@@ -1,6 +1,6 @@
+import "../../pages/footer/style.scss";
 
 export function Awards({data}) {
-  console.log(data);
 
   return (
     <section>

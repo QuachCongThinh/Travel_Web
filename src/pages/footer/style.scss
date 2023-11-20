@@ -1,0 +1,150 @@
+.footer {
+  background: #000;
+  color: #fff;
+  display: flex;
+}
+.widget {
+  display: flex;
+  width: 400px;
+  list-style: none;
+  margin-top: 60px;
+  .widget-1 {
+    width: 400px;
+    list-style: none;
+    .widget_title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .text_widget {
+      p {
+        line-height: 25px;
+        font-size: 15px;
+        font-weight: 300;
+        margin-top: 20px;
+        color: #cccccc;
+      }
+      img {
+        max-width: 85%;
+        margin-top: 20px;
+      }
+    }
+  }
+  .widget-2 {
+    width: 400px;
+    margin: 0 20px 0 60px;
+    .widget_title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .text_widget {
+      p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-top: 20px;
+        color: #cccccc;
+
+        svg {
+          vertical-align: middle;
+          margin-right: 10px;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  .widget-3 {
+    width: 400px;
+    .widget_title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .flick {
+      margin-top: 20px;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 2fr);
+      column-gap: 8px;
+      li {
+        img {
+          width: 130px;
+          height: 130px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+.social__icon {
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+
+  .facebook {
+    font-size: 25px;
+    a {
+      svg {
+        color: #fff;
+        background: #2d5f9a;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+  }
+  .twitter {
+    font-size: 25px;
+    margin-left: 15px;
+    a {
+      svg {
+        color: #fff;
+        background: #00c3f3;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+  }
+  .youtube {
+    font-size: 25px;
+    margin-left: 15px;
+    a {
+      svg {
+        color: #fff;
+        background: #cc181e;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+  }
+  .pinterest {
+    font-size: 25px;
+    margin-left: 15px;
+    a {
+      svg {
+        color: #fff;
+        background: #cc181e;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+  }
+  .instagram {
+    font-size: 25px;
+    margin-left: 15px;
+    a {
+      svg {
+        color: #fff;
+        background: #405de6;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+  }
+}

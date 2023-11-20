@@ -1,5 +1,5 @@
 export async function fetchData(url) {
-  const API_URL = "http://192.168.1.23:3001";
+  const API_URL = "https://travel-web-server-5hhv.onrender.com";
   try {
     let response = await fetch(API_URL + url, {
       method: "GET",

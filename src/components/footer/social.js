@@ -1,7 +1,10 @@
-import {BiLogoFacebook,BiLogoTwitter} from "react-icons/bi";
-import { fetchData } from "../../utils";
+import { BiLogoFacebook, BiLogoTwitter } from "react-icons/bi";
+import { AiFillYoutube } from "react-icons/ai";
+import { FaPinterest, FaInstagram } from "react-icons/fa";
+import "../../pages/footer/style.scss";
 
-export function Social() {
+export function Social({data}) {
+  
   return (
     <section>
       <ul className="social__icon">

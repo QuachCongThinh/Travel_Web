@@ -1,8 +1,11 @@
 import { AiOutlineMobile } from "react-icons/ai";
 import { FiMapPin } from "react-icons/fi";
 import { CgAlarm } from "react-icons/cg";
+import "../../pages/footer/style.scss";
+import { Social } from "./social";
 
-export function Contact({data}) {
+export function Contact({ data, social }) {
+
   return (
     <section>
       <li className="widget-2">
@@ -21,6 +24,7 @@ export function Contact({data}) {
             {data.data?.time}
           </p>
         </div>
+        <Social data={social}  />
       </li>
     </section>
   );

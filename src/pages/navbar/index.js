@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ROUTERS } from "../../routes/router";
 import images from "../../assets/images";
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ const Navbar = () => {
   const [menus] = useState([
     {
       name: "Home",
-      path: ROUTERS.USER.HOME,
+      path: "",
       child: [
         {
           name: "Home 1 - Background Image",
@@ -31,7 +30,7 @@ const Navbar = () => {
     },
     {
       name: "Tours",
-      path: ROUTERS.USER.TOURS,
+      path: "",
       child: [
         {
           name: "Tour Classic FullWidth",
@@ -151,7 +150,7 @@ const Navbar = () => {
     },
     {
       name: "Booking",
-      path: ROUTERS.USER.BOOKING,
+      path: "",
       child: [
         {
           name: "Online Payment for Booking",
@@ -235,7 +234,7 @@ const Navbar = () => {
     },
     {
       name: "Destinations",
-      path: ROUTERS.USER.DESTINATIONS,
+      path: "",
       child: [
         {
           name: "Destination FullWidth",
@@ -265,7 +264,7 @@ const Navbar = () => {
     },
     {
       name: "Pages",
-      path: ROUTERS.USER.PAGES,
+      path: "",
       child: [
         {
           name: "About Us",
@@ -303,7 +302,7 @@ const Navbar = () => {
     },
     {
       name: "Blog",
-      path: ROUTERS.USER.BLOG,
+      path: "",
       child: [
         {
           name: "Blog Right Sidebar",
@@ -345,7 +344,7 @@ const Navbar = () => {
     },
     {
       name: "Shortcodes",
-      path: ROUTERS.USER.SHORTCODES,
+      path: "",
       child: [
         {
           name: "Accordion & Toogles",
@@ -391,7 +390,7 @@ const Navbar = () => {
     },
     {
       name: "Shop",
-      path: ROUTERS.USER.SHOP,
+      path: "",
       child: [
         {
           name: "Shop FullWidth",

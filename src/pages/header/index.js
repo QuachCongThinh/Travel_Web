@@ -12,16 +12,13 @@ const Header = () => {
     fetchData("/banner")
       .then((data) => {
         // text; // => 'Page not found'
-        console.log(data);
         setBannerData(data);
       })
       .catch((error) => {
-        console.warn(error);
         setBannerData({});
         // error.message; // 'An error has occurred: 404'
       });
   }, []);
-  
 
   return (
     <section>
