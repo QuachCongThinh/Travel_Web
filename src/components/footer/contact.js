@@ -11,20 +11,20 @@ export function Contact({ data, social }) {
       <li className="widget-2">
         <h2 class="widget_title">{data.data?.title}</h2>
         <div className="text_widget">
-          <p>
+          <p className="phone">
             <AiOutlineMobile />
             {data.data?.phone}
           </p>
-          <p>
+          <p className="address">
             <FiMapPin />
             {data.data?.address}
           </p>
-          <p>
+          <p className="time">
             <CgAlarm />
             {data.data?.time}
           </p>
         </div>
-        <Social data={social}  />
+        <Social data={social}/>
       </li>
     </section>
   );

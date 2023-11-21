@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AiOutlineUp } from "react-icons/ai";
 
 export function FooterBar() {
   const [menusFooter] = useState({
@@ -26,15 +27,16 @@ export function FooterBar() {
   return (
     <section>
       <div className="footer__bar">
-        <div className="footer__bar_wrapper">
-          <div className="footer__menu">
-            <div className="copyright">{menusFooter.title}</div>
-            <div className="menu__footer">
-              <ul>
-                {menusFooter.menus?.map((item) => (
-                  <li>{item.name}</li>
-                ))}
-              </ul>
+        <div className="footer__content">
+          <div className="copyright">{menusFooter.title}</div>
+          <div className="menu__footer">
+            <ul>
+              {menusFooter.menus?.map((item) => (
+                <li>{item.name}</li>
+              ))}
+            </ul>
+            <div className="button__toTop">
+              <AiOutlineUp />
             </div>
           </div>
         </div>

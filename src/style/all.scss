@@ -14,14 +14,26 @@ body {
   box-sizing: border-box;
 }
 .navbar{
-  max-width: 1300px;
+  width: 1250px;
+  margin: auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  max-width: 1250px;
   width: 100%;
   margin: auto;
 }
-.container{
-  max-width: 1300px;
+.homepage{
+  max-width: 1250px;
   width: 100%;
   margin: auto;
+}
+.widget{
+  max-width: 1250px;
+  width: 100%;
 }
 
 .col-lg-3 {

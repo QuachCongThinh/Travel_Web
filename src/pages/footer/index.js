@@ -61,11 +61,6 @@ const Footer = () => {
           </ul>
           <FooterBar />
         </div>
-        {/* <div className="toTop">
-          <a>
-            <AiOutlineUp />
-          </a>
-        </div> */}
       </div>
     </>
   );

@@ -1,57 +1,156 @@
 .footer {
   background: #000;
   color: #fff;
+  position: relative;
   display: flex;
 }
 .widget {
   display: flex;
-  width: 400px;
   list-style: none;
   margin-top: 60px;
+
   .widget-1 {
     width: 400px;
     list-style: none;
     .widget_title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
     }
     .text_widget {
       p {
         line-height: 25px;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 300;
         margin-top: 20px;
         color: #cccccc;
       }
       img {
-        max-width: 85%;
+        max-width: 65%;
         margin-top: 20px;
       }
     }
   }
   .widget-2 {
     width: 400px;
-    margin: 0 20px 0 60px;
+    margin-left: 40px;
     .widget_title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
     }
     .text_widget {
-      p {
-        font-size: 15px;
-        font-weight: 300;
-        margin-top: 20px;
-        color: #cccccc;
-
+      .phone {
         svg {
           vertical-align: middle;
           margin-right: 10px;
           font-size: 17px;
         }
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 20px;
+        color: #cccccc;
+      }
+      .address {
+        svg {
+          margin-right: 10px;
+          vertical-align: middle;
+          font-size: 17px;
+        }
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 20px;
+        color: #cccccc;
+      }
+      .time {
+        svg {
+          margin-top: 5px;
+          vertical-align: middle;
+          margin-right: 10px;
+          font-size: 17px;
+        }
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 20px;
+        color: #cccccc;
+      }
+    }
+    .social__icon {
+      display: flex;
+      list-style: none;
+      margin-top: 30px;
+
+      .facebook {
+        font-size: 25px;
+        a {
+          svg {
+            color: #fff;
+            background: #2d5f9a;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+          }
+        }
+      }
+      .twitter {
+        font-size: 25px;
+        margin-left: 15px;
+        a {
+          svg {
+            color: #fff;
+            background: #00c3f3;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+          }
+        }
+      }
+      .youtube {
+        font-size: 25px;
+        margin-left: 15px;
+        a {
+          svg {
+            color: #fff;
+            background: #cc181e;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+          }
+        }
+      }
+      .pinterest {
+        font-size: 25px;
+        margin-left: 15px;
+        a {
+          svg {
+            color: #fff;
+            background: #cc181e;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+          }
+        }
+      }
+      .instagram {
+        font-size: 25px;
+        margin-left: 15px;
+        a {
+          svg {
+            color: #fff;
+            background: #405de6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+          }
+        }
       }
     }
   }
   .widget-3 {
+    cursor: pointer;
     width: 400px;
     .widget_title {
       font-size: 18px;
@@ -61,8 +160,9 @@
       margin-top: 20px;
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(3, 2fr);
-      column-gap: 8px;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 3px;
+      column-gap: 10px;
       li {
         img {
           width: 130px;
@@ -73,77 +173,47 @@
     }
   }
 }
-.social__icon {
-  display: flex;
-  list-style: none;
-  margin-top: 20px;
 
-  .facebook {
-    font-size: 25px;
-    a {
-      svg {
-        color: #fff;
-        background: #2d5f9a;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-      }
+.footer__bar {
+  border-top: 1px solid #2e2e2e;
+  margin-top: 40px;
+  .footer__content {
+    display: flex;
+    margin: 30px 0;
+    .copyright {
+      width: 100%;
+      font-size: 12px;
+      font-weight: 300;
     }
-  }
-  .twitter {
-    font-size: 25px;
-    margin-left: 15px;
-    a {
-      svg {
-        color: #fff;
-        background: #00c3f3;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
+    .menu__footer {
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        font-size: 12px;
+        li {
+          padding: 0 0 0 10px;
+        }
       }
-    }
-  }
-  .youtube {
-    font-size: 25px;
-    margin-left: 15px;
-    a {
-      svg {
-        color: #fff;
-        background: #cc181e;
+      .button__toTop {
+        background: #1ec6b6;
+        width: 45px;
+        height: 45px;
+        padding: 13px 0;
+        text-align: center;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-      }
-    }
-  }
-  .pinterest {
-    font-size: 25px;
-    margin-left: 15px;
-    a {
-      svg {
-        color: #fff;
-        background: #cc181e;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-      }
-    }
-  }
-  .instagram {
-    font-size: 25px;
-    margin-left: 15px;
-    a {
-      svg {
-        color: #fff;
-        background: #405de6;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
+        position: absolute;
+        right: 0;
+        margin-right: 15px;
+        margin-top: -5px;
+        transition: all 0.1s;
+        &:hover {
+          transform: translateY(-5px);
+        }
       }
     }
   }

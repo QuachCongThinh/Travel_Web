@@ -1,16 +1,12 @@
 @import "../../style/all.scss";
 
 .navbar {
-  display: flex;
-  padding: 20px;
-  margin-top: 6px;
-}
-.navbar__logo {
-  img {
-    width: 92px;
-    position: relative;
-    display: flex;
-    align-items: center;
+  .navbar__logo {
+    img {
+      width: 92px;
+      position: relative;
+      padding: 27px 0;
+    }
   }
 }
 .navbar__menu {
@@ -21,12 +17,14 @@
   
   ul {
     display: flex;
-    margin-right: 20px;
+    margin-right: 10px;
     
     li {
+      cursor: pointer;
       position: relative;
       list-style: none;
       padding: 0 20px;
+      
       a {
         text-decoration: none;
         color: #fff;
@@ -51,9 +49,9 @@
     position: absolute;
     width: 240px;
     padding: 5px 0;
+    line-height: 28px;
     z-index: 9;
     transition: all 0.2s ease;
-    line-height: 28px;
     opacity: 0;
     visibility: hidden;
 
@@ -109,7 +107,7 @@
   }
   .header__cart {
     display: flex;
-    margin-right: 20px;
+    margin-right: 10px;
     position: relative;
     align-items: center;
 
@@ -126,16 +124,16 @@
       span {
         position: absolute;
         color: #fff;
-        font-size: 10px;
+        font-size: 9px;
         background: #ff4a52;
         border-radius: 50%;
-        width: 12px;
-        height: 12px;
+        width: 15px;
+        height: 15px;
         display: inline-block;
         text-align: center;
-        top: -5px;
-        left: 13px;
-        line-height: 14px;
+        top: -8px;
+        left: 11px;
+        line-height: 16px;
       }
     }
   }
