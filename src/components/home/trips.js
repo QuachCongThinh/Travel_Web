@@ -3,7 +3,6 @@ import { PiStarThin } from "react-icons/pi";
 import { CiClock2 } from "react-icons/ci";
 
 export function BestTrips({ data }) {
-  console.log(data);
   return (
     <section>
       <div className="bestTrips">

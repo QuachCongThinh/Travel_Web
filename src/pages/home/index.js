@@ -3,11 +3,12 @@ import "../../pages/home/style.scss";
 import { fetchData } from "../../utils";
 import { Destinations } from "../../components/home/destination";
 import { BestTrips } from "../../components/home/trips";
+import { Choose } from "../../components/home/choose";
 
 const HomePage = () => {
   const [destination, setDestination] = useState({});
   const [bestTrips, setBesttrips] = useState({});
-  console.log(bestTrips);
+  const [choose, setChoose] = useState({});
 
   useEffect(() => {
     fetchData("/destinations")
@@ -28,12 +29,22 @@ const HomePage = () => {
         setBesttrips({});
         // error.message; // 'An error has occurred: 404'
       });
+    fetchData("/why-choose-us")
+      .then((data) => {
+        // text; // => 'Page not found'
+        setChoose(data);
+      })
+      .catch((error) => {
+        setChoose({});
+        // error.message; // 'An error has occurred: 404'
+      });
   }, []);
   return (
     <section>
       <div className="homepage">
         <Destinations data={destination} />
-        <BestTrips data={bestTrips}/>
+        <BestTrips data={bestTrips} />
+        <Choose data={choose} />
       </div>
     </section>
   );
