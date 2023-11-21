@@ -10,9 +10,11 @@ export function Destinations({ data }) {
           <ul>
             {data.data?.destinations.map((item) => (
               <li>
-                <h1>{item.title}</h1>
                 <img src={item.imageUrl} />
-              </li> 
+                <div className="text">
+                  <h1>{item.title}</h1>
+                </div>
+              </li>
             ))}
           </ul>
         </div>

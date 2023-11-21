@@ -20,9 +20,9 @@ export function Choose({ data }) {
           </ul>
         </div>
       </div>
-        <div className="background">
-          {/* <img src="https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/pexels-photo-24377.jpg"></img> */}
-        </div>
+      <div className="background">
+        <img src="https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/pexels-photo-24377.jpg"></img>
+      </div>
     </section>
   );
 }

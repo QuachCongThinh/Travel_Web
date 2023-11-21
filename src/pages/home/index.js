@@ -4,11 +4,13 @@ import { fetchData } from "../../utils";
 import { Destinations } from "../../components/home/destination";
 import { BestTrips } from "../../components/home/trips";
 import { Choose } from "../../components/home/choose";
+import { Articles } from "../../components/home/articles";
 
 const HomePage = () => {
   const [destination, setDestination] = useState({});
   const [bestTrips, setBesttrips] = useState({});
   const [choose, setChoose] = useState({});
+  const [articles, setArticles] = useState({});
 
   useEffect(() => {
     fetchData("/destinations")
@@ -38,6 +40,15 @@ const HomePage = () => {
         setChoose({});
         // error.message; // 'An error has occurred: 404'
       });
+    fetchData("/articles")
+      .then((data) => {
+        // text; // => 'Page not found'
+        setArticles(data);
+      })
+      .catch((error) => {
+        setArticles({});
+        // error.message; // 'An error has occurred: 404'
+      });
   }, []);
   return (
     <section>
@@ -45,6 +56,7 @@ const HomePage = () => {
         <Destinations data={destination} />
         <BestTrips data={bestTrips} />
         <Choose data={choose} />
+        <Articles data={articles} />
       </div>
     </section>
   );
