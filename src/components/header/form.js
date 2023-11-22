@@ -9,29 +9,123 @@ import {
 export function SearchForm() {
   const [month] = useState([
     {
-      value: "Any Month",
       title: "Any Month",
+      values: [
+        {
+          name: "January",
+        },
+        {
+          name: "February",
+        },
+        {
+          name: "March",
+        },
+        {
+          name: "April",
+        },
+        {
+          name: "May",
+        },
+        {
+          name: "June",
+        },
+        {
+          name: "July",
+        },
+        {
+          name: "August",
+        },
+        {
+          name: "September",
+        },
+        {
+          name: "October",
+        },
+        {
+          name: "November",
+        },
+        {
+          name: "December",
+        },
+      ],
     },
   ]);
   const [sort] = useState([
     {
-      value: "Sort By Date",
       title: "Sort By Date",
+      values: [
+        {
+          name: "Price Low to High",
+        },
+        {
+          name: "Price High to Low",
+        },
+        {
+          name: "Sort by Name",
+        },
+        {
+          name: "Sort by Popularity",
+        },
+        {
+          name: "Sort by Review Core",
+        },
+      ],
     },
   ]);
   const [categories] = useState([
     {
-      value: "Any Category",
       title: "Any Category",
+      values: [
+        { name: "Moutain" },
+        { name: "Rural" },
+        { name: "Snow & Ice" },
+        { name: "WildLife" },
+      ],
     },
   ]);
   const [destination] = useState([
     {
-      value: "Any Destination",
       title: "Any Destination",
+      values: [
+        {
+          name: "Tokyo",
+        },
+        {
+          name: "Seoul",
+        },
+        {
+          name: "Paris",
+        },
+        {
+          name: "London",
+        },
+        {
+          name: "Venice",
+        },
+        {
+          name: "Miami",
+        },
+        {
+          name: "Rome",
+        },
+        {
+          name: "Prague",
+        },
+        {
+          name: "Califonia",
+        },
+        {
+          name: "Kyoto",
+        },
+        {
+          name: "HongKong",
+        },
+        {
+          name: "Santorini",
+        },
+      ],
     },
   ]);
-
 
   return (
     <section>
@@ -50,7 +144,7 @@ export function SearchForm() {
           <div className="form__show">
             <select className="month">
               {month.map((option) => (
-                <option value={option.value}>{option.title}</option>
+                <option value={option.title}>{option.title}</option>
               ))}
             </select>
             <span className="icon__calendar">

@@ -13,13 +13,17 @@ export function Articles({ data }) {
           <ul>
             {data.data?.articles.map((item) => (
               <li>
-                <img src={item.imageUrl}></img>
-                <p className="date">{item.date}</p>
-                <p className="title">{item.title}</p>
-                <p className="description">{item.description}</p>
-                <p>
-                  Read More <RiArrowRightSLine />
-                </p>
+                <div className="details">
+                  <img src={item.imageUrl}></img>
+                  <div className="text">
+                    <p className="date">{item.date}</p>
+                    <p className="title">{item.title}</p>
+                    <p className="description">{item.description}</p>
+                    <p className="more">
+                      Read More <RiArrowRightSLine />
+                    </p>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
