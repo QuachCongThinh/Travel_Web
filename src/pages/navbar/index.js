@@ -419,7 +419,7 @@ const Navbar = () => {
       <div className="navbar__menu">
         <ul>
           {menus.map((menu, menuKey) => (
-            <li key={menuKey} className={menuKey}>
+            <li key={menuKey} className="menu__parent">
               <Link to={menu.path} className="menu">{menu.name}</Link>
               {menu.child && (
                 <ul className="header__menu__dropdown">

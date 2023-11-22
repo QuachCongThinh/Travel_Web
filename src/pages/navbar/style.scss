@@ -1,12 +1,14 @@
 @import "../../style/all.scss";
+@import "../../style/theme.scss";
 
 .navbar {
   .navbar__logo {
     img {
       width: 92px;
       position: relative;
-      padding: 27px 0;
+      padding: 24px 0;
       z-index: 1;
+      vertical-align: middle;
     }
   }
 }
@@ -19,13 +21,14 @@
 
   ul {
     display: flex;
-    margin: 0 20px;
+    margin: 0 25px;
 
     li {
       cursor: pointer;
       position: relative;
       list-style: none;
       padding: 0 12px;
+      margin-top: 5px;
 
       .menu {
         text-decoration: none;
@@ -33,7 +36,6 @@
         font-weight: 500;
         font-size: 13px;
         transition: all 0.3s;
-        padding: 0 0 30px 0;
         &::after {
           font-family: "FontAwesome";
           content: "\f107";
@@ -63,16 +65,13 @@
     transition: all 0.2s ease;
     opacity: 0;
     visibility: hidden;
-    padding: 10px 8px;
+    padding: 2px 8px;
 
     li {
       .link__menu {
-        // width: 100%;
         text-decoration: none;
-        color: #000;
+        color: $navar-menu;
         font-size: 13px;
-        // padding: 10px 0;
-        
         &::after {
           font-family: "FontAwesome";
           content: "\f105";
@@ -82,11 +81,21 @@
           float: right;
         }
       }
+      &::after {
+        content: "";
+        margin-top: 5px;
+        display: block;
+        border-bottom: 1px solid #dce0e0;
+      }
+      &:last-child::after {
+        content: "";
+        border: none;
+      }
       .link_menu {
         text-decoration: none;
-        color: #000;
+        color: $navar-menu;
         font-size: 13px;
-        line-height: 5px;
+        line-height: -5px;
       }
       :hover {
         color: #ff4a52;
@@ -98,23 +107,23 @@
     }
   }
   .header__menu__horizontal {
-    border-radius: 5px;
-    margin-left: 232px;
-    top: -10px;
+    width: 222px;
+    margin-left: 231px;
+    top: -7px;
+    padding: 2px 0;
     background: #fff;
     display: block;
+    border-radius: 5px;
     position: absolute;
-    width: 222px;
-    padding: 5px 0;
     transition: all 0.2s ease;
     line-height: 28px;
     opacity: 0;
     visibility: hidden;
-    
+
     li {
       a {
         text-decoration: none;
-        color: #000;
+        color: $navar-menu;
         font-size: 13px;
         &::after {
           content: "";

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineUp } from "react-icons/ai";
 
 export function FooterBar() {
@@ -24,6 +24,10 @@ export function FooterBar() {
     ],
   });
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  });
+
   return (
     <section>
       <div className="footer__bar">
@@ -35,7 +39,12 @@ export function FooterBar() {
                 <li>{item.name}</li>
               ))}
             </ul>
-            <div className="button__toTop">
+            <div
+              className="button__toTop"
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+            >
               <AiOutlineUp />
             </div>
           </div>

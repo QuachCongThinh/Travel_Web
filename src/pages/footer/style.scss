@@ -1,5 +1,7 @@
+@import "../../style/theme.scss";
+
 .footer {
-  background: #000;
+  background: $bg-footer-color;
   color: #fff;
   position: relative;
   display: flex;

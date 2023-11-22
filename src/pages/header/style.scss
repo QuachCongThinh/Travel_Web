@@ -1,4 +1,5 @@
 @import "../../style/all.scss";
+@import "../../style/theme.scss";
 
 .header {
   position: relative;
@@ -6,18 +7,18 @@
   .header__banner {
     img {
       width: 100%;
-      height: 800px;
+      height: 820px;
       margin-top: -90px;
       z-index: -1;
       position: relative;
       object-fit: cover;
       background-size: cover;
     }
-    &::before{
+    &::before {
       position: absolute;
       content: "";
       width: 100%;
-      height: 800px;
+      height: 820px;
       margin-top: -90px;
       z-index: 0;
       background: #000;
@@ -31,17 +32,17 @@
   width: 100%;
 
   .title {
-    margin-top: 210px;
+    margin-top: 208px;
     h1 {
       font-size: 36px;
       color: #fff;
       text-align: center;
     }
     h3 {
-      color: #fff;
+      color: #cccccc;
       text-align: center;
       font-size: 15px;
-      font-weight: 400;
+      font-weight: 600;
     }
   }
 
@@ -73,6 +74,7 @@
           margin-right: 25px;
           box-sizing: border-box;
           outline: none;
+          border: 1px solid #dce0e0;
         }
         .month {
           position: relative;
@@ -88,6 +90,7 @@
           -moz-appearance: none;
           text-indent: 1px;
           text-overflow: "";
+          border: 1px solid #dce0e0;
         }
         .sort__by {
           position: relative;
@@ -103,6 +106,7 @@
           -moz-appearance: none;
           text-indent: 1px;
           text-overflow: "";
+          border: 1px solid #dce0e0;
         }
         .button {
           position: relative;
@@ -150,6 +154,7 @@
           -moz-appearance: none;
           text-indent: 1px;
           text-overflow: "";
+          border: 1px solid #dce0e0;
         }
         svg {
           position: absolute;
@@ -170,6 +175,7 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           text-indent: 1px;
+          border: 1px solid #dce0e0;
           text-overflow: "";
         }
         .budget {
@@ -182,6 +188,7 @@
           color: #707070;
           margin-right: 25px;
           box-sizing: border-box;
+          border: 1px solid #dce0e0;
           outline: none;
         }
       }
