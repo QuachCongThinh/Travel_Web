@@ -95,11 +95,111 @@
       list-style: none;
       margin: 50px 0;
       li {
-        img {
-          min-height: 290px;
-          width: 100%;
-          border-radius: 5px;
-          object-fit: cover;
+        &:nth-child(2) {
+          margin: 0 30px;
+        }
+        border-radius: 5px;
+        border: 1px solid #cacaca;
+        transition: all 0.3s;
+        .image {
+          position: relative;
+          img {
+            border-radius: 5px;
+            display: block;
+            min-height: 230px;
+            width: 100%;
+            object-fit: cover;
+          }
+          .price {
+            position: absolute;
+            cursor: pointer;
+            background: #ff4a52;
+            color: #ffffff;
+            z-index: 2;
+            display: block;
+            bottom: 10px;
+            padding: 5px 10px;
+            font-size: 15px;
+            font-weight: 700;
+            transition-duration: 0.3s;
+          }
+          .sale{
+            &:nth-child(3){
+              position: absolute;
+              color: #fff;
+              background: #1ec6b6;
+              font-size: 12px;
+              font-weight: 500;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 40px;
+              height: 40px;
+              top: -15px;
+              right: -15px;
+              text-align: center;
+              border-radius: 50%;
+            }
+          }
+        }
+        &:hover .price {
+          transform: scale(1.2);
+        }
+
+        .text {
+          position: relative;
+          padding: 15px 15px 15px 15px;
+          .name {
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 700;
+          }
+          .address {
+            margin-top: 5px;
+            font-size: 13px;
+          }
+          .evaluate {
+            margin-top: 20px;
+            display: flex;
+            .start {
+              display: flex;
+              cursor: pointer;
+              margin-right: 1px;
+              font-size: 15px;
+              margin-top: 1px;
+              &::before {
+                content: "\f005";
+                font-family: "FontAwesome";
+                color: #1ec6b6;
+              }
+              &:nth-child(5):before {
+                content: "\f006";
+                font-family: "FontAwesome";
+              }
+            }
+            .quantity {
+              font-size: 12px;
+              font-weight: 600;
+              margin-left: 5px;
+            }
+            .day {
+              svg {
+                vertical-align: middle;
+                margin-top: -2px;
+                margin-right: 2px;
+                font-size: 13px;
+              }
+              position: absolute;
+              margin-right: 10px;
+              right: 0;
+              font-size: 12px;
+              font-weight: 600;
+            }
+          }
+        }
+        &:hover {
+          box-shadow: 0 20px 40px 4px rgba(0, 0, 0, 0.1);
+          transform: translateY(-5px);
         }
       }
     }
@@ -169,20 +269,19 @@
     }
   }
   .articles__details {
-    margin-top: 50px;
-    margin-bottom: 40px;
+    width: 1250px;
+    margin-top: 60px;
+    margin-bottom: 80px;
     ul {
       display: flex;
       list-style: none;
       li {
-        &:nth-child(1) {
-          margin-left: 0;
+        &:nth-child(2) {
+          margin: 0 35px;
         }
-       
         &:nth-child(3) {
           margin-right: 0;
         }
-        margin: 0 20px;
         cursor: pointer;
         transition: all 0.3s;
         .details {

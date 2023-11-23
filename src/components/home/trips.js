@@ -1,5 +1,4 @@
 import "../../pages/home/style.scss";
-import { PiStarThin } from "react-icons/pi";
 import { CiClock2 } from "react-icons/ci";
 
 export function BestTrips({ data }) {
@@ -14,22 +13,27 @@ export function BestTrips({ data }) {
           <ul>
             {data.data?.valueTrips.map((item) => (
               <li>
-                <h3 className="price">{item.price}</h3>
-                <h1 className="name">{item.title}</h1>
-                <p className="address">{item.excerpt}</p>
-                <p className="start">
-                  <PiStarThin />
-                  <PiStarThin />
-                  <PiStarThin />
-                  <PiStarThin />
-                  <PiStarThin />
-                  {item.stars}
-                </p>
-                <p className="day">
-                  <CiClock2 />
-                  {item.days}
-                </p>
-                <img src={item.imageUrl}></img>
+                <div className="image">
+                  <img src={item.imageUrl}></img>
+                  <h3 className="price">{item.price}</h3>
+                  <p className="sale">Sale</p>
+                </div>
+                <div className="text">
+                  <h1 className="name">{item.title}</h1>
+                  <p className="address">{item.excerpt}</p>
+                  <div className="evaluate">
+                    <div className="start"></div>
+                    <div className="start"></div>
+                    <div className="start"></div>
+                    <div className="start"></div>
+                    <div className="start"></div>
+                    <p className="quantity">{item.stars} reviews</p>
+                    <p className="day">
+                      <CiClock2 />
+                      {item.days} days
+                    </p>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
