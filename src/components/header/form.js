@@ -7,124 +7,53 @@ import {
 } from "react-icons/ai";
 
 export function SearchForm() {
+  
+  const handleClick = () => {
+    const formHide = document.querySelector(".container__header .form .tour__advanced");
+    if(formHide.style.display === "none") {
+      formHide.style.display = "block";
+    }
+    else{
+      formHide.style.display = "none";
+    }
+  }
+
   const [month] = useState([
-    {
-      title: "Any Month",
-      values: [
-        {
-          name: "January",
-        },
-        {
-          name: "February",
-        },
-        {
-          name: "March",
-        },
-        {
-          name: "April",
-        },
-        {
-          name: "May",
-        },
-        {
-          name: "June",
-        },
-        {
-          name: "July",
-        },
-        {
-          name: "August",
-        },
-        {
-          name: "September",
-        },
-        {
-          name: "October",
-        },
-        {
-          name: "November",
-        },
-        {
-          name: "December",
-        },
-      ],
-    },
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ]);
+
   const [sort] = useState([
-    {
-      title: "Sort By Date",
-      values: [
-        {
-          name: "Price Low to High",
-        },
-        {
-          name: "Price High to Low",
-        },
-        {
-          name: "Sort by Name",
-        },
-        {
-          name: "Sort by Popularity",
-        },
-        {
-          name: "Sort by Review Core",
-        },
-      ],
-    },
+    "Price Low to High",
+    "Price High to Low",
+    "Sort by Name",
+    "Sort by Popularity",
+    "Sort by Review Core",
   ]);
-  const [categories] = useState([
-    {
-      title: "Any Category",
-      values: [
-        { name: "Moutain" },
-        { name: "Rural" },
-        { name: "Snow & Ice" },
-        { name: "WildLife" },
-      ],
-    },
-  ]);
+  const [categories] = useState(["Moutain", "Rural", "Snow & Ice", "WildLife"]);
   const [destination] = useState([
-    {
-      title: "Any Destination",
-      values: [
-        {
-          name: "Tokyo",
-        },
-        {
-          name: "Seoul",
-        },
-        {
-          name: "Paris",
-        },
-        {
-          name: "London",
-        },
-        {
-          name: "Venice",
-        },
-        {
-          name: "Miami",
-        },
-        {
-          name: "Rome",
-        },
-        {
-          name: "Prague",
-        },
-        {
-          name: "Califonia",
-        },
-        {
-          name: "Kyoto",
-        },
-        {
-          name: "HongKong",
-        },
-        {
-          name: "Santorini",
-        },
-      ],
-    },
+    "Tokyo",
+    "Seoul",
+    "Paris",
+    "London",
+    "Venice",
+    "Miami",
+    "Rome",
+    "Prague",
+    "Califonia",
+    "Kyoto",
+    "HongKong",
+    "Santorini",
   ]);
 
   return (
@@ -143,8 +72,9 @@ export function SearchForm() {
           </div>
           <div className="form__show">
             <select className="month">
-              {month.map((option) => (
-                <option value={option.title}>{option.title}</option>
+              <option value="">Any Month</option>
+              {month.map((item) => (
+                <option value={item}>{item}</option>
               ))}
             </select>
             <span className="icon__calendar">
@@ -153,8 +83,9 @@ export function SearchForm() {
           </div>
           <div className="form__show">
             <select className="sort__by">
-              {sort.map((option) => (
-                <option value={option.value}>{option.title}</option>
+              <option value="">Sort By Date</option>
+              {sort.map((item) => (
+                <option value={item}>{item}</option>
               ))}
             </select>
             <span className="icon__exchange">
@@ -169,8 +100,9 @@ export function SearchForm() {
           <div className="form__hide_advanced">
             <div className="form__hide">
               <select className="list__categories">
-                {categories.map((option) => (
-                  <option value={option.value}>{option.title}</option>
+                <option value="">Any Categories</option>
+                {categories.map((item) => (
+                  <option value={item}>{item}</option>
                 ))}
               </select>
               <span className="icon__arrowDown">
@@ -179,8 +111,9 @@ export function SearchForm() {
             </div>
             <div className="form__hide">
               <select className="destinations">
-                {destination.map((option) => (
-                  <option value={option.value}>{option.title}</option>
+                <option value="">Any Destination</option>
+                {destination.map((item) => (
+                  <option value={item}>{item}</option>
                 ))}
               </select>
               <span className="icon__arrowDown">
@@ -197,8 +130,8 @@ export function SearchForm() {
             </div>
           </div>
         </form>
-        <div className="tour__addvanced__search">
-          <a href="/#" className="toggle">
+        <div className="tour__addvanced__search" onClick={handleClick}>
+          <a className="toggle" >
             <AiOutlineDown />
             Advanced Search
           </a>

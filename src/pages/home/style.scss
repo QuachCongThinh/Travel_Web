@@ -17,14 +17,29 @@
   }
   .destination__details {
     ul {
+      height: 100%;
       cursor: pointer;
       display: flex;
       list-style: none;
       margin: 50px 0;
 
       li {
+        width: 100%;
         position: relative;
+        transition: all 0.3s;
+        .text {
+          position: absolute;
+          padding: 15px 15px;
+          bottom: 0;
+          z-index: 2;
+          h1 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+          }
+        }
         img {
+          display: block;
           min-height: 290px;
           width: 100%;
           border-radius: 5px;
@@ -35,7 +50,7 @@
           position: absolute;
           top: 0;
           right: 0;
-          bottom: 6px;
+          bottom: 0;
           left: 0;
           background-image: linear-gradient(
             transparent 0%,
@@ -46,7 +61,6 @@
           );
           border-radius: 5px;
         }
-        transition: all 0.3s ease;
         &:nth-child(2) {
           margin-left: 30px;
         }
@@ -57,18 +71,6 @@
           box-shadow: 0 20px 40px 4px rgba(0, 0, 0, 0.1);
           transform: translateY(-5px);
           border-radius: 5px;
-        }
-      }
-      .text {
-        width: 100%;
-        position: absolute;
-        padding: 15px 15px;
-        bottom: 0;
-        z-index: 2;
-        h1 {
-          color: #fff;
-          font-size: 24px;
-          font-weight: 700;
         }
       }
     }
@@ -102,6 +104,7 @@
         border: 1px solid #cacaca;
         transition: all 0.3s;
         .image {
+          cursor: pointer;
           position: relative;
           img {
             border-radius: 5px;
@@ -111,6 +114,9 @@
             object-fit: cover;
           }
           .price {
+            &::before {
+              content: "$";
+            }
             position: absolute;
             cursor: pointer;
             background: #ff4a52;
@@ -123,23 +129,27 @@
             font-weight: 700;
             transition-duration: 0.3s;
           }
-          .sale{
-            &:nth-child(3){
-              position: absolute;
-              color: #fff;
-              background: #1ec6b6;
-              font-size: 12px;
-              font-weight: 500;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 40px;
-              height: 40px;
-              top: -15px;
-              right: -15px;
-              text-align: center;
-              border-radius: 50%;
-            }
+          .discount {
+            position: absolute;
+            top: 0;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+          }
+          .sale {
+            position: absolute;
+            color: #fff;
+            background: #1ec6b6;
+            font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            top: -15px;
+            right: -15px;
+            border-radius: 50%;
           }
         }
         &:hover .price {
@@ -239,6 +249,7 @@
         }
         .description {
           font-size: 15px;
+          margin-top: 10px;
           color: #444;
         }
       }
@@ -269,7 +280,6 @@
     }
   }
   .articles__details {
-    width: 1250px;
     margin-top: 60px;
     margin-bottom: 80px;
     ul {
@@ -279,19 +289,21 @@
         &:nth-child(2) {
           margin: 0 35px;
         }
-        &:nth-child(3) {
-          margin-right: 0;
-        }
         cursor: pointer;
         transition: all 0.3s;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 20px 4px rgba(0, 0, 0, 0.1);
+        }
         .details {
-          border: 1px solid #b6b6b6;
+          border: 1px solid #cacaca;
           border-radius: 5px;
+
           img {
             width: 100%;
           }
           .text {
-            padding: 20px 25px;
+            padding: 15px 25px;
             .date {
               font-size: 13px;
               font-weight: 600;
@@ -299,13 +311,14 @@
             .title {
               font-size: 20px;
               font-weight: 700;
-              margin-top: 6px;
+              margin-top: 5px;
+              margin-right: 20px;
             }
             .description {
-              width: 100%;
               font-size: 15px;
               font-weight: 300;
               margin-top: 23px;
+
               line-height: 28px;
             }
             .more {
@@ -322,10 +335,6 @@
               }
             }
           }
-        }
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 20px 4px rgba(0, 0, 0, 0.1);
         }
       }
     }
