@@ -3,6 +3,7 @@ import images from "../../assets/images";
 import "./style.scss";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
+import { HiOutlineXMark } from "react-icons/hi2";
 
 const Navbar = () => {
   const [menus] = useState([
@@ -420,7 +421,9 @@ const Navbar = () => {
         <ul>
           {menus.map((menu, menuKey) => (
             <li key={menuKey} className="menu__parent">
-              <Link to={menu.path} className="menu">{menu.name}</Link>
+              <Link to={menu.path} className="menu">
+                {menu.name}
+              </Link>
               {menu.child && (
                 <ul className="header__menu__dropdown">
                   {menu.child.map((childItem, childKey) => (
@@ -457,6 +460,43 @@ const Navbar = () => {
             <AiOutlineShoppingCart /> <span>0</span>
           </div>
         </div>
+      </div>
+      <div className="close__menu">
+        <div className="close"></div>
+      </div>
+      <div className="main__menubar">
+        <div className="icon__menubar">
+          <a>
+            <span className="icon__xmark__closemenu">
+              <HiOutlineXMark />
+            </span>
+          </a>
+        </div>
+        <div className="menubar__menu">
+          <ul>
+            {menus.map((item) => (
+              <li>
+                <Link to={item.path}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+          <ul>
+            {menus.map((item) => (
+              <li>
+                <Link to={item.path}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+          <ul>
+            {menus.map((item) => (
+              <li>
+                <Link to={item.path}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="menubar__details"></div>
+        <div className="menubar__social"></div>
       </div>
     </div>
   );
