@@ -3,7 +3,7 @@ import { AiFillYoutube } from "react-icons/ai";
 import { FaPinterest, FaInstagram } from "react-icons/fa";
 import "../../pages/footer/style.scss";
 
-export function Social({data}) {
+export function Social() {
   
   return (
     <section>

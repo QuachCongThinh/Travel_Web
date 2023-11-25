@@ -1,3 +1,5 @@
+import "../../style/all.scss";
+
 export function Destinations({ data }) {
   return (
     <section>

@@ -145,6 +145,12 @@
       color: #fff;
       margin-right: 5px;
       font-size: 17px;
+      -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
     }
     .logo__cart {
       display: flex;

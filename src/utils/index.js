@@ -11,11 +11,9 @@ export async function fetchData(url) {
     }
 
     let data = await response.json();
-    // setBannerData(dataMonth);
     return data;
   } catch (error) {
     // console.log('Fetch error: ', error);
     throw new Error(error);
   }
-  // ========== Start Get data from api /month ==========
 }
