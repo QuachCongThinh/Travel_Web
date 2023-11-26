@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import images from "../../assets/images";
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -412,6 +412,17 @@ const Navbar = () => {
       ],
     },
   ]);
+  const btnOpenMenu = () => {
+    const menuBar = document.querySelector(".navbar .main__menubar");
+    console.log(menuBar);
+    menuBar.style.transform = "translateX(0)";
+  };
+  const btnCloseMenu = () => {
+    const menuBar = document.querySelector(".navbar .main__menubar");
+    console.log(menuBar);
+    menuBar.style.transform = "translateX(100%)";
+  };
+
   return (
     <div className="navbar">
       <div className="navbar__logo">
@@ -454,8 +465,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="header__cart">
-          <AiOutlineMenu />
+        <div className="menu__cart">
+          <div className="logo__menu" >
+            <AiOutlineMenu onClick={btnOpenMenu} />
+          </div>
           <div className="logo__cart">
             <AiOutlineShoppingCart /> <span>0</span>
           </div>
@@ -467,7 +480,7 @@ const Navbar = () => {
       <div className="main__menubar">
         <div className="icon__menubar">
           <a>
-            <span className="icon__xmark__closemenu">
+            <span className="icon__xmark__closemenu" onClick={btnCloseMenu}>
               <HiOutlineXMark />
             </span>
           </a>

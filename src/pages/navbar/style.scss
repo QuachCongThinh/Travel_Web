@@ -133,12 +133,14 @@
         }
       }
     }
-    .header__cart {
+    .menu__cart {
       display: flex;
       margin-right: 10px;
       position: relative;
       align-items: center;
-
+      .logo__menu {
+        margin-top: 10px;
+      }
       svg {
         cursor: pointer;
         color: #fff;
@@ -151,9 +153,11 @@
         filter: FlipH;
         -ms-filter: "FlipH";
       }
+
       .logo__cart {
         display: flex;
         align-items: center;
+        margin-top: 5px;
         position: relative;
         margin-left: 10px;
         span {
@@ -183,6 +187,7 @@
     // background: rgba(226, 226, 226, 0.671);
     // box-shadow: inset 0px 0px 30px 5px #ffffff;
   }
+
   .main__menubar {
     width: 340px;
     height: 100%;
@@ -193,6 +198,7 @@
     top: 0;
     right: 0;
     z-index: 999;
+    transition: all 0.3s;
     transform: translateX(100%);
     .icon__menubar {
       position: fixed;
