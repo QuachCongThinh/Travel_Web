@@ -244,6 +244,7 @@ app.get("/menu-trips", (req, res) => {
       {
         title: "Swiss Alps Trip",
         price: 3_900,
+        discount: null,
         imageUrl:
           "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/pexels-photo-131729-700x466.jpeg",
       },
@@ -304,7 +305,7 @@ app.get("/articles", (req, res) => {
             "Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache...",
           imageUrl:
             "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/photo-1469920783271-4ee08a94d42d-960x636.jpg",
-          date: "10/DECEMBER/2016",
+          date: "DECEMBER 10, 2016",
         },
         {
           title: "7 Tips For Nomads On A Budget Trips",
@@ -312,7 +313,7 @@ app.get("/articles", (req, res) => {
             "Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache...",
           imageUrl:
             "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/pexels-photo-212388-960x636.jpeg",
-          date: "10/DECEMBER/2016",
+          date: "DECEMBER 10, 2016",
         },
         {
           title: "Taking A Travel Blog Victory Lap",
@@ -320,7 +321,7 @@ app.get("/articles", (req, res) => {
             "Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache...",
           imageUrl:
             "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/pexels-photo-24484-960x636.jpg",
-          date: "10/DECEMBER/2016",
+          date: "DECEMBER 10, 2016",
         },
       ],
     },
