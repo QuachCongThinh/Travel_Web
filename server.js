@@ -222,8 +222,8 @@ app.get("/value-trips", (req, res) => {
             "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/pexels-photo-197657-700x466.jpeg",
         },
         {
-          price: 3_000,
-          discount: 2_500,
+          price: 2_500,
+          discount: 3_000,
           sale: "Sale",
           title: "Discover Japan",
           excerpt: "City Tours, Iconic",
