@@ -250,8 +250,8 @@ app.get("/menu-trips", (req, res) => {
       },
       {
         title: "5 Lake of Fuji San",
-        price: 4_900,
-        discount: 4_200,
+        price: 4_200,
+        discount: 4_900,
         imageUrl:
           "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/uploads/2016/12/pexels-photo-225630-700x466.jpeg",
       },
