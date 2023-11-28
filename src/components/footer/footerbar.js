@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AiOutlineUp } from "react-icons/ai";
+import { BackToTop } from "../button/backToTop";
 
 export function FooterBar() {
   const [menusFooter] = useState({
@@ -35,14 +35,7 @@ export function FooterBar() {
                 <li>{item.name}</li>
               ))}
             </ul>
-            <div
-              className="button__toTop"
-              onClick={() => {
-                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-              }}
-            >
-              <AiOutlineUp />
-            </div>
+            <BackToTop />
           </div>
         </div>
       </div>

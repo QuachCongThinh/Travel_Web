@@ -10,7 +10,7 @@
   display: flex;
   list-style: none;
   margin-top: 60px;
-  
+
   .widget-1 {
     width: 400px;
     list-style: none;
@@ -79,7 +79,7 @@
       display: flex;
       list-style: none;
       margin-top: 30px;
-
+  
       .facebook {
         font-size: 25px;
         a {
@@ -201,12 +201,14 @@
           padding: 0 0 0 10px;
         }
       }
+
       .button__toTop {
         background: #1ec6b6;
         width: 45px;
         height: 45px;
         padding: 13px 0;
         text-align: center;
+        display: block;
         border-radius: 50%;
         position: absolute;
         right: 0;

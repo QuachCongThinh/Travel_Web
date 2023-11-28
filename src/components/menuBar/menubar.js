@@ -1,15 +1,8 @@
-import { useState, useEffect } from "react";
-import { MenuBar } from "../../components/menuBar/menubar";
-import images from "../../assets/images";
-import "./style.scss";
+import "../../pages/navbar/style.scss";
 import { Link } from "react-router-dom";
-import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
-import { HiOutlineXMark } from "react-icons/hi2";
-import { fetchData } from "../../utils";
-import { MenuTrips } from "../../components/menuBar/menuTrips";
-import { SocialMenuBar } from "../../components/menuBar/socialMenuBar";
+import { useState } from "react";
 
-const Navbar = () => {
+export function MenuBar() {
   const [menus] = useState([
     {
       name: "Home",
@@ -416,105 +409,17 @@ const Navbar = () => {
       ],
     },
   ]);
-  const [menuTrips, setMenuTrips] = useState({});
-  const [social, setSocial] = useState({});
-
-  useEffect(() => {
-    fetchData("/menu-trips")
-      .then((data) => {
-        // text; // => 'Page not found'
-        setMenuTrips(data);
-      })
-      .catch((error) => {
-        setMenuTrips({});
-        // error.message; // 'An error has occurred: 404'
-      });
-    fetchData("/social")
-      .then((data) => {
-        // text; // => 'Page not found'
-        setSocial(data);
-      })
-      .catch((data) => {
-        setSocial({});
-        // error.message; // 'An error has occurred: 404'
-      });
-  }, []);
-
-  const btnOpenMenu = () => {
-    const menuBar = document.querySelector(".navbar .main__menubar");
-    menuBar.style.transform = "translateX(0)";
-  };
-  const btnCloseMenu = () => {
-    const menuBar = document.querySelector(".navbar .main__menubar");
-    menuBar.style.transform = "translateX(100%)";
-  };
-
   return (
-    <div className="navbar">
-      <div className="navbar__logo">
-        <img src={images.logo} alt="Logo"></img>
-      </div>
-      <div className="navbar__menu">
+    <>
+      <div className="menubar__menu">
         <ul>
-          {menus.map((menu, menuKey) => (
-            <li key={menuKey} className="menu__parent">
-              <Link to={menu.path} className="menu">
-                {menu.name}
-              </Link>
-              {menu.child && (
-                <ul className="header__menu__dropdown">
-                  {menu.child.map((childItem, childKey) => (
-                    <li key={`${menuKey}-${childKey}`}>
-                      <Link
-                        className={`${
-                          childItem.submenu ? "link__menu" : "link_menu"
-                        }`}
-                        to={childItem.path}
-                      >
-                        {childItem.name}
-                      </Link>
-                      {childItem.submenu && (
-                        <ul className="header__menu__horizontal">
-                          {childItem.submenu?.map((submenuItem, submenuKey) => (
-                            <li key={`${menuKey}-${submenuKey}`}>
-                              <Link to={submenuItem.path}>
-                                {submenuItem.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
+          {menus.map((item) => (
+            <li>
+              <Link to={item.path}>{item.name}</Link>
             </li>
           ))}
         </ul>
-        <div className="menu__cart">
-          <div className="logo__menu">
-            <AiOutlineMenu onClick={btnOpenMenu} />
-          </div>
-          <div className="logo__cart">
-            <AiOutlineShoppingCart /> <span>0</span>
-          </div>
-        </div>
       </div>
-      <div id="open__menubar" className="open"></div>
-      <div className="main__menubar">
-        <div className="icon__menubar">
-          <a>
-            <span className="icon__xmark__closemenu" onClick={btnCloseMenu}>
-              <HiOutlineXMark />
-            </span>
-          </a>
-        </div>
-        <MenuBar />
-        <MenuTrips data={menuTrips} />
-        <SocialMenuBar data={social} />
-      </div>
-    </div>
+    </>
   );
-};
-
-export default Navbar;
+}

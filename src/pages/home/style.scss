@@ -76,7 +76,6 @@
     }
   }
 }
-
 .bestTrips {
   .bestTrips__content {
     margin-top: 70px;
@@ -97,62 +96,76 @@
       list-style: none;
       margin: 50px 0;
       li {
-        &:nth-child(2) {
-          margin: 0 30px;
-        }
         border-radius: 5px;
         border: 1px solid #cacaca;
         transition: all 0.3s;
-        .image {
+        &:nth-child(2) {
+          margin: 0 30px;
+        }
+        &:nth-child(3) .sale {
+          position: absolute;
+          color: #fff;
+          background: #1ec6b6;
+          font-size: 12px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          top: -15px;
+          right: -15px;
+          border-radius: 50%;
+        }
+        .tour__image {
           cursor: pointer;
           position: relative;
+          display: block;
+
           img {
-            border-radius: 5px;
+            border-radius: 5px 5px 0 0;
             display: block;
             min-height: 230px;
             width: 100%;
             object-fit: cover;
           }
-          .price {
-            &::before {
-              content: "$";
-            }
+          .tour__price {
             position: absolute;
             cursor: pointer;
-            background: #ff4a52;
-            color: #ffffff;
             z-index: 2;
-            display: block;
+            background: #ff4a52;
+            padding: 3px 10px 2px 10px;
             bottom: 10px;
-            padding: 5px 10px;
-            font-size: 15px;
-            font-weight: 700;
-            transition-duration: 0.3s;
-          }
-          .discount {
-            position: absolute;
-            top: 0;
-            color: #fff;
-            font-size: 15px;
-            font-weight: 700;
-          }
-          .sale {
-            position: absolute;
-            color: #fff;
-            background: #1ec6b6;
-            font-size: 12px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            top: -15px;
-            right: -15px;
-            border-radius: 50%;
+            transition-duration: 0.2s;
+
+            .normal__price {
+              &::before {
+                color: #ffffff;
+                content: "$";
+              }
+              font-weight: 700;
+              color: #ffffff;
+              transition-duration: 0.2s;
+            }
+            .discount {
+              font-size: 13px;
+              color: #ffffff;
+              opacity: 0.6;
+              text-decoration: line-through;
+            }
           }
         }
-        &:hover .price {
+        &:nth-child(3) .discount::before {
+          content: "$";
+          text-decoration: line-through;
+        }
+        &:nth-child(3) .normal__price {
+          color: #ffffff;
+          font-size: 15px;
+          font-weight: 700;
+          margin-left: 5px;
+        }
+        &:hover .tour__price {
           transform: scale(1.2);
         }
 
