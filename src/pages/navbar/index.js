@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MenuBar } from "../../components/menuBar/menubar";
 import images from "../../assets/images";
 import "./style.scss";
+import "../../style/all.scss";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
 import { HiOutlineXMark } from "react-icons/hi2";
@@ -440,13 +441,23 @@ const Navbar = () => {
       });
   }, []);
 
-  const btnOpenMenu = () => {
-    const menuBar = document.querySelector(".navbar .main__menubar");
-    menuBar.style.transform = "translateX(0)";
-  };
-  const btnCloseMenu = () => {
-    const menuBar = document.querySelector(".navbar .main__menubar");
-    menuBar.style.transform = "translateX(100%)";
+  window.onload = () => {
+    const openMenu = document.querySelector("#logo__menu");
+    const menuBar = document.querySelector("#main__menubar");
+    const closeMenu = document.querySelector("#icon__menubar");
+    const body = document.querySelector("body");
+    const wrapper = document.querySelector("#wrapper");
+
+    openMenu.onclick = function () {
+      menuBar.classList.toggle("active");
+      body.classList.toggle("scroll__hide");
+      wrapper.classList.toggle("blur");
+    };
+    closeMenu.onclick = function () {
+      menuBar.classList.remove("active");
+      body.classList.remove("scroll__hide");
+      wrapper.classList.remove("blur");
+    };
   };
 
   return (
@@ -492,19 +503,22 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="menu__cart">
-          <div className="logo__menu">
-            <AiOutlineMenu onClick={btnOpenMenu} />
+          <div id="logo__menu">
+            <AiOutlineMenu />
           </div>
           <div className="logo__cart">
-            <AiOutlineShoppingCart /> <span>0</span>
+            <AiOutlineShoppingCart />
+            <span>0</span>
           </div>
         </div>
       </div>
-      <div id="open__menubar" className="open"></div>
-      <div className="main__menubar">
-        <div className="icon__menubar">
+
+      
+      <div id="close__menu"></div>
+      <div id="main__menubar">
+        <div id="icon__menubar">
           <a>
-            <span className="icon__xmark__closemenu" onClick={btnCloseMenu}>
+            <span className="icon__xmark__closemenu">
               <HiOutlineXMark />
             </span>
           </a>

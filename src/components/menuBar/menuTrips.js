@@ -5,8 +5,8 @@ export function MenuTrips({ data }) {
     <>
       <div className="menubar__details">
         <ul>
-          {data.data?.map((item) => (
-            <li>
+          {data.data?.map((item, itemKey) => (
+            <li key={itemKey}>
               <div className="image__trips">
                 <img src={item.imageUrl}></img>
                 <div className="trips__price">

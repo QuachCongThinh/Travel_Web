@@ -415,7 +415,7 @@ export function MenuBar() {
         <ul>
           {menus.map((item) => (
             <li>
-              <Link to={item.path}>{item.name}</Link>
+              <Link  to={item.path}>{item.name}</Link>
             </li>
           ))}
         </ul>

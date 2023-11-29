@@ -1,6 +1,10 @@
 @import "../../style/all.scss";
 @import "../../style/theme.scss";
 
+.blur{
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+}
 .navbar {
   .navbar__logo {
     img {
@@ -60,7 +64,7 @@
       font-size: 13px;
       font-weight: 500;
       line-height: 28px;
-      z-index: 9;
+      z-index: 1;
       transition: all 0.2s ease;
       opacity: 0;
       visibility: hidden;
@@ -76,7 +80,6 @@
             content: "\f105";
             margin-top: 2px;
             line-height: 20px;
-            display: inline-block;
             float: right;
           }
         }
@@ -132,12 +135,13 @@
         }
       }
     }
+
     .menu__cart {
       display: flex;
       margin-right: 10px;
       position: relative;
       align-items: center;
-      .logo__menu {
+      #logo__menu {
         margin-top: 10px;
       }
       svg {
@@ -176,23 +180,23 @@
       }
     }
   }
+  
+  .open{
+    z-index: 99 !important;
+  }
+  #close__menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 
-  .open {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // height: 100%;
-    // background: rgba(255, 255, 255, 0.85);    
-    // z-index: 3;
-    // visibility: hidden;
-    // .open{
-    //   z-index: 99;
-    // }
-  } 
-
-
-  .main__menubar {
+  .active {
+    right: 0 !important;
+  }
+  #main__menubar {
     width: 340px;
     height: 100%;
     padding: 35px 40px 0 40px;
@@ -200,13 +204,15 @@
     background: rgba(255, 255, 255, 0.85);
     position: fixed;
     top: 0;
-    right: 0;
+    right: -340px;
     z-index: 999;
     transition: all 0.3s;
-    transform: translateX(100%);
     overflow: auto;
-    .icon__menubar {
-      position: fixed;
+    #icon__menubar {
+      .close {
+        right: -340px !important;
+      }
+      position: absolute;
       top: 30px;
       right: 30px;
       border-radius: 250px;
@@ -230,6 +236,7 @@
         transform: translateY(-5px);
       }
     }
+
     ul {
       margin-top: 50px;
       margin-bottom: 40px;
@@ -249,6 +256,7 @@
         }
       }
     }
+
     .menubar__details {
       position: relative;
       .image__trips {
@@ -284,6 +292,7 @@
             font-size: 13px;
             text-decoration: line-through;
             font-weight: 400;
+            margin-right: 3px;
             opacity: 0.6;
           }
           &:nth-child(2) .discount::before {
@@ -295,7 +304,6 @@
             color: #fff;
             font-size: 15px;
             font-weight: 700;
-            margin-left: 3px;
           }
         }
       }
@@ -333,7 +341,6 @@
           }
         }
       }
-
       &::after {
         content: "";
         position: absolute;

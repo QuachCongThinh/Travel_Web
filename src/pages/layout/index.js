@@ -5,7 +5,7 @@ import Navbar from "../navbar";
 
 const Layout = () => {
   return (
-    <div>
+    <div id="wrapper">
       <Navbar/>
       <Header />
       <HomePage/>

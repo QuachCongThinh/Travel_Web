@@ -19,7 +19,6 @@ const ButtonContainer = styled.span`
   z-index: 1;
   display: ${({ isScrollButtonVisible }) =>
     isScrollButtonVisible ? "flex" : "none"};
-
   &:hover {
     opacity: 1;
   }
