@@ -1,4 +1,5 @@
-import "../../pages/navbar/style.scss";
+import "../../pages/menubar/style.scss";
+
 
 export function MenuTrips({ data }) {
   return (

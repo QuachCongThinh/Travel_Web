@@ -50,20 +50,16 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
     .tour__search {
       display: flex;
-
       .form__show {
         margin-top: 20px;
-
         svg {
           position: absolute;
           margin-top: 12px;
           margin-left: -50px;
           color: #7a7a7a;
         }
-
         .form__search {
           position: relative;
           width: 280px;
@@ -128,6 +124,9 @@
     }
     .tour__advanced {
       display: none;
+      .show{
+        display: block;
+      }
       .form__hide_advanced {
         display: flex;
         margin-top: 25px;
@@ -196,190 +195,25 @@
 
     .tour__addvanced__search {
       margin-top: 10px;
-      .toggle {
+      #icon_down {
+        .icon_up{
+        &::before{
+            font-family: "FontAwesome";
+            content: "\f077";
+          }
+        }
+        &::before{
+          font-family: "FontAwesome";
+          content: "\f078";
+          font-weight: 300;
+          margin-right: 3px;
+        }
         cursor: pointer;
         color: #fff;
         font-size: 13px;
         text-decoration: none;
         font-weight: 300;
-        svg {
-          margin-right: 5px;
-          vertical-align: middle;
-        }
       }
     }
-  }
-}
-.option__btn {
-  cursor: pointer;
-  width: 40px;
-  height: 145px;
-  position: fixed;
-  top: 150px;
-  right: -2px;
-  background: #fff;
-  border-radius: 5px 0 0 5px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  text-align: center;
-  z-index: 1;
-  font-size: 19px;
-  a {
-    display: block;
-    line-height: 32px;
-  }
-  .icon__setting {
-    .tooltip {
-      position: relative;
-      display: inline-block;
-
-      .text {
-        visibility: hidden;
-        width: 130px;
-        background-color: rgb(31, 31, 31);
-        color: #fff;
-        border: 2px solid #000;
-        text-align: center;
-        border-radius: 6px;
-        font-size: 9px;
-        position: absolute;
-        z-index: 1;
-        top: -5px;
-        right: 40px;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 100%;
-          margin-top: -5px;
-          border-width: 5px;
-          border-style: solid;
-          border-color: transparent transparent transparent black;
-        }
-      }
-      &:hover .text {
-        visibility: visible;
-      }
-    }
-  }
-  .icon__heart {
-    .tooltip {
-      position: relative;
-      display: inline-block;
-
-      .text {
-        visibility: hidden;
-        width: 80px;
-        background-color: rgb(31, 31, 31);
-        color: #fff;
-        border: 2px solid #000;
-        text-align: center;
-        border-radius: 6px;
-        font-size: 9px;
-        position: absolute;
-        z-index: 1;
-        top: -5px;
-        right: 40px;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 100%;
-          margin-top: -5px;
-          border-width: 5px;
-          border-style: solid;
-          border-color: transparent transparent transparent black;
-        }
-      }
-      &:hover .text {
-        visibility: visible;
-      }
-    }
-  }
-  .icon__book {
-    .tooltip {
-      position: relative;
-      display: inline-block;
-
-      .text {
-        visibility: hidden;
-        width: 130px;
-        background-color: rgb(31, 31, 31);
-        color: #fff;
-        border: 2px solid #000;
-        text-align: center;
-        border-radius: 6px;
-        font-size: 9px;
-        position: absolute;
-        z-index: 1;
-        top: -5px;
-        margin-top: 2px;
-        right: 40px;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 100%;
-          margin-top: -5px;
-          border-width: 5px;
-          border-style: solid;
-          border-color: transparent transparent transparent black;
-        }
-      }
-      &:hover .text {
-        visibility: visible;
-      }
-    }
-  }
-  .icon__cart {
-    .tooltip {
-      position: relative;
-      display: inline-block;
-
-      .text {
-        visibility: hidden;
-        width: 100px;
-        background-color: rgb(31, 31, 31);
-        color: #fff;
-        border: 2px solid #000;
-        text-align: center;
-        border-radius: 6px;
-        font-size: 9px;
-        position: absolute;
-        z-index: 1;
-        top: -5px;
-        right: 40px;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 100%;
-          margin-top: -5px;
-          border-width: 5px;
-          border-style: solid;
-          border-color: transparent transparent transparent black;
-        }
-      }
-      &:hover .text {
-        visibility: visible;
-      }
-    }
-  }
-}
-
-.icon__heart {
-}
-.icon__book {
-  font-size: 15px;
-}
-.icon__cart {
-  svg {
-    font-size: 16px;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
   }
 }

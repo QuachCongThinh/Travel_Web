@@ -7,17 +7,6 @@ import {
 } from "react-icons/ai";
 
 export function SearchForm() {
-  
-  const handleClick = () => {
-    const formHide = document.querySelector(".container__header .form .tour__advanced");
-    if(formHide.style.display === "none") {
-      formHide.style.display = "block";
-    }
-    else{
-      formHide.style.display = "none";
-    }
-  }
-
   const [month] = useState([
     "January",
     "February",
@@ -55,6 +44,22 @@ export function SearchForm() {
     "HongKong",
     "Santorini",
   ]);
+
+  const handleClick = () => {
+    const formHide = document.querySelector(
+      ".container__header .form .tour__advanced"
+    );
+    const toggle = document.querySelector("#icon_down");
+    
+    if (formHide.style.display === "none") {
+      formHide.style.display = "block";
+      toggle.classList.toggle("icon_up");
+    } else {
+      formHide.style.display = "none";
+      toggle.classList.remove("icon_up");
+    }
+  };
+  
 
   return (
     <section>
@@ -131,8 +136,7 @@ export function SearchForm() {
           </div>
         </form>
         <div className="tour__addvanced__search" onClick={handleClick}>
-          <a className="toggle" >
-            <AiOutlineDown />
+          <a id="icon_down">
             Advanced Search
           </a>
         </div>

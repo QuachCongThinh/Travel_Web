@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react";
-import { MenuBar } from "../../components/menuBar/menubar";
+import { useState } from "react";
 import images from "../../assets/images";
 import "./style.scss";
 import "../../style/all.scss";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
-import { HiOutlineXMark } from "react-icons/hi2";
-import { fetchData } from "../../utils";
-import { MenuTrips } from "../../components/menuBar/menuTrips";
-import { SocialMenuBar } from "../../components/menuBar/socialMenuBar";
 
 const Navbar = () => {
   const [menus] = useState([
@@ -417,36 +412,13 @@ const Navbar = () => {
       ],
     },
   ]);
-  const [menuTrips, setMenuTrips] = useState({});
-  const [social, setSocial] = useState({});
-
-  useEffect(() => {
-    fetchData("/menu-trips")
-      .then((data) => {
-        // text; // => 'Page not found'
-        setMenuTrips(data);
-      })
-      .catch((error) => {
-        setMenuTrips({});
-        // error.message; // 'An error has occurred: 404'
-      });
-    fetchData("/social")
-      .then((data) => {
-        // text; // => 'Page not found'
-        setSocial(data);
-      })
-      .catch((data) => {
-        setSocial({});
-        // error.message; // 'An error has occurred: 404'
-      });
-  }, []);
 
   window.onload = () => {
-    const openMenu = document.querySelector("#logo__menu");
-    const menuBar = document.querySelector("#main__menubar");
-    const closeMenu = document.querySelector("#icon__menubar");
+    const openMenu = document.getElementById("logo__menu");
+    const menuBar = document.getElementById("main__menubar");
+    const closeMenu = document.getElementById("icon__menubar");
     const body = document.querySelector("body");
-    const wrapper = document.querySelector("#wrapper");
+    const wrapper = document.getElementById("wrapper");
 
     openMenu.onclick = function () {
       menuBar.classList.toggle("active");
@@ -511,21 +483,6 @@ const Navbar = () => {
             <span>0</span>
           </div>
         </div>
-      </div>
-
-      
-      <div id="close__menu"></div>
-      <div id="main__menubar">
-        <div id="icon__menubar">
-          <a>
-            <span className="icon__xmark__closemenu">
-              <HiOutlineXMark />
-            </span>
-          </a>
-        </div>
-        <MenuBar />
-        <MenuTrips data={menuTrips} />
-        <SocialMenuBar data={social} />
       </div>
     </div>
   );
