@@ -45,21 +45,16 @@ export function SearchForm() {
     "Santorini",
   ]);
 
-  const handleClick = () => {
+  window.onload = () => {
     const formHide = document.querySelector(
-      ".container__header .form .tour__advanced"
+      ".container__header .form #tour__advanced"
     );
-    const toggle = document.querySelector("#icon_down");
-    
-    if (formHide.style.display === "none") {
-      formHide.style.display = "block";
+    const toggle = document.querySelector(".container__header .form .tour__addvanced__search .icon_down");
+    toggle.onclick = function(){
+      formHide.classList.toggle("show");
       toggle.classList.toggle("icon_up");
-    } else {
-      formHide.style.display = "none";
-      toggle.classList.remove("icon_up");
-    }
+    };
   };
-  
 
   return (
     <section>
@@ -101,7 +96,7 @@ export function SearchForm() {
             <input value="Search" className="button" type="submit"></input>
           </div>
         </form>
-        <form className="tour__advanced">
+        <form id="tour__advanced">
           <div className="form__hide_advanced">
             <div className="form__hide">
               <select className="list__categories">
@@ -135,10 +130,8 @@ export function SearchForm() {
             </div>
           </div>
         </form>
-        <div className="tour__addvanced__search" onClick={handleClick}>
-          <a id="icon_down">
-            Advanced Search
-          </a>
+        <div className="tour__addvanced__search">
+          <a className="icon_down">Advanced Search</a>
         </div>
       </div>
     </section>

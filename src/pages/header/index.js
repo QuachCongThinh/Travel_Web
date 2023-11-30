@@ -3,10 +3,6 @@ import { useState, useEffect } from "react";
 import images from "../../assets/images";
 import { fetchData } from "../../utils";
 import { SearchForm } from "../../components/header/form";
-import { GoBook } from "react-icons/go";
-import { CiSettings } from "react-icons/ci";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Header = () => {
   const [banner, setBannerData] = useState({});

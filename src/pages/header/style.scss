@@ -122,11 +122,11 @@
         }
       }
     }
-    .tour__advanced {
+    .show{
+      display: block !important;
+    }
+    #tour__advanced {
       display: none;
-      .show{
-        display: block;
-      }
       .form__hide_advanced {
         display: flex;
         margin-top: 25px;
@@ -192,21 +192,21 @@
         }
       }
     }
-
+    .icon_up {
+      &::before {
+        font-family: "FontAwesome";
+        content: "\f106" !important;
+      }
+    }
     .tour__addvanced__search {
       margin-top: 10px;
-      #icon_down {
-        .icon_up{
-        &::before{
-            font-family: "FontAwesome";
-            content: "\f077";
-          }
-        }
-        &::before{
+      .icon_down {
+        &::before {
           font-family: "FontAwesome";
-          content: "\f078";
-          font-weight: 300;
-          margin-right: 3px;
+          content: "\f107";
+          margin-right: 5px;
+          vertical-align: middle;
+          font-size: 20px;
         }
         cursor: pointer;
         color: #fff;

@@ -413,7 +413,7 @@ const Navbar = () => {
     },
   ]);
 
-  window.onload = () => {
+  window.addEventListener("load", () => {
     const openMenu = document.getElementById("logo__menu");
     const menuBar = document.getElementById("main__menubar");
     const closeMenu = document.getElementById("icon__menubar");
@@ -430,7 +430,7 @@ const Navbar = () => {
       body.classList.remove("scroll__hide");
       wrapper.classList.remove("blur");
     };
-  };
+  });
 
   return (
     <div className="navbar">
