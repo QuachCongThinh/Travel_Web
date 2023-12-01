@@ -45,7 +45,7 @@ export function SearchForm() {
     "Santorini",
   ]);
 
-  window.onload = () => {
+  window.addEventListener("load", () => {
     const formHide = document.querySelector(
       ".container__header .form #tour__advanced"
     );
@@ -54,7 +54,7 @@ export function SearchForm() {
       formHide.classList.toggle("show");
       toggle.classList.toggle("icon_up");
     };
-  };
+  });
 
   return (
     <section>
@@ -73,8 +73,8 @@ export function SearchForm() {
           <div className="form__show">
             <select className="month">
               <option value="">Any Month</option>
-              {month.map((item) => (
-                <option value={item}>{item}</option>
+              {month.map((item, monthKey) => (
+                <option key={monthKey} value={item}>{item}</option>
               ))}
             </select>
             <span className="icon__calendar">
@@ -84,8 +84,8 @@ export function SearchForm() {
           <div className="form__show">
             <select className="sort__by">
               <option value="">Sort By Date</option>
-              {sort.map((item) => (
-                <option value={item}>{item}</option>
+              {sort.map((item, sortKey) => (
+                <option key={sortKey} value={item}>{item}</option>
               ))}
             </select>
             <span className="icon__exchange">
@@ -101,8 +101,8 @@ export function SearchForm() {
             <div className="form__hide">
               <select className="list__categories">
                 <option value="">Any Categories</option>
-                {categories.map((item) => (
-                  <option value={item}>{item}</option>
+                {categories.map((item, cateKey) => (
+                  <option key={cateKey} value={item}>{item}</option>
                 ))}
               </select>
               <span className="icon__arrowDown">
@@ -112,8 +112,8 @@ export function SearchForm() {
             <div className="form__hide">
               <select className="destinations">
                 <option value="">Any Destination</option>
-                {destination.map((item) => (
-                  <option value={item}>{item}</option>
+                {destination.map((item, desKey) => (
+                  <option key={desKey} value={item}>{item}</option>
                 ))}
               </select>
               <span className="icon__arrowDown">

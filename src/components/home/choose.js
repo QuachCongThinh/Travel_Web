@@ -10,8 +10,8 @@ export function Choose({ data }) {
         </div>
         <div className="choose__details">
           <ul>
-            {data.data?.whyChooseUs.map((item) => (
-              <li>
+            {data.data?.whyChooseUs.map((item, itemKey) => (
+              <li key={itemKey}>
                 <img src={item.iconUrl}></img>
                 <h2 className="title">{item.title}</h2>
                 <p className="description">{item.description}</p>

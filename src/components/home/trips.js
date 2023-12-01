@@ -12,8 +12,8 @@ export function BestTrips({ data }) {
         </div>
         <div className="bestTrips__details">
           <ul>
-            {data.data?.valueTrips.map((item) => (
-              <li>
+            {data.data?.valueTrips.map((item, menuKey) => (
+              <li key={menuKey}>
                 <div className="tour__image">
                   <img src={item.imageUrl}></img>
                   <p className="sale">{item.sale}</p>
@@ -31,7 +31,7 @@ export function BestTrips({ data }) {
                     <div className="start"></div>
                     <div className="start"></div>
                     <div className="start"></div>
-                    <div className="start"></div>
+                    <div className="start"></div> 
 
                     <p className="quantity">{item.stars} reviews</p>
                     <p className="day">

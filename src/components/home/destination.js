@@ -10,8 +10,8 @@ export function Destinations({ data }) {
         </div>
         <div className="destination__details">
           <ul>
-            {data.data?.destinations.map((item) => (
-              <li>
+            {data.data?.destinations.map((item, desKey) => (
+              <li key={desKey}>
                 <div className="text">
                   <h1>{item.title}</h1>
                 </div>

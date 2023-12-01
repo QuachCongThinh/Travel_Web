@@ -11,8 +11,8 @@ export function Articles({ data }) {
         </div>
         <div className="articles__details">
           <ul>
-            {data.data?.articles.map((item) => (
-              <li>
+            {data.data?.articles.map((item, articleKey) => (
+              <li key={articleKey}>
                 <div className="details">
                   <img src={item.imageUrl}></img>
                   <div className="text">

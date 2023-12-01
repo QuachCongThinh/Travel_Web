@@ -31,8 +31,8 @@ export function FooterBar() {
           <div className="copyright">{menusFooter.title}</div>
           <div className="menu__footer">
             <ul>
-              {menusFooter.menus?.map((item) => (
-                <li>{item.name}</li>
+              {menusFooter.menus?.map((item, menuKey) => (
+                <li key={menuKey}>{item.name}</li>
               ))}
             </ul>
             <BackToTop />

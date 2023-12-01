@@ -29,9 +29,9 @@ export function BackToTop() {
 
   useEffect(() => {
     const checkScrollHeight = () => {
-      if (!showButton && window.pageYOffset > 400) {
+      if (!showButton && window.scrollY > 400) {
         setShowButton(true);
-      } else if (showButton && window.pageYOffset <= 400) {
+      } else if (showButton && window.scrollY <= 400) {
         setShowButton(false);
       }
     };

@@ -9,7 +9,7 @@ export function Contact({ data, social }) {
   return (
     <section>
       <li className="widget-2">
-        <h2 class="widget_title">{data.data?.title}</h2>
+        <h2 className="widget_title">{data.data?.title}</h2>
         <div className="text_widget">
           <p className="phone">
             <AiOutlineMobile />
