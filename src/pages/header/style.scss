@@ -6,7 +6,7 @@
   .header__banner {
     img {
       width: 100%;
-      height: 870px;
+      height: 885px;
       margin-top: -140px;
       z-index: -1;
       position: relative;
@@ -16,7 +16,7 @@
       position: absolute;
       content: "";
       width: 100%;
-      height: 870px;
+      height: 885px;
       margin-top: -140px;
       z-index: 1;
       background: #000;
@@ -29,45 +29,48 @@
   top: 0;
   width: 100%;
   z-index: 3;
-
   .title {
-    margin-top: 208px;
+    margin-top: 226px;
     h1 {
       font-size: 36px;
       color: #fff;
       text-align: center;
-      line-height: 50px;
+      line-height: 49px;
     }
     h3 {
       color: #cccccc;
       text-align: center;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 
   .form {
     position: absolute;
-    left: 50%;
     z-index: 2;
+    left: 50%;
     transform: translateX(-50%);
     .tour__search {
+      margin-left: 32px;
       display: flex;
       .form__show {
-        margin-top: 20px;
+        margin-top: 23px;
         svg {
           position: absolute;
-          margin-top: 12px;
-          margin-left: -50px;
+          margin-top: 10px;
+          margin-left: -52px;
+          font-size: 18px;
           color: #7a7a7a;
         }
         .form__search {
           position: relative;
-          width: 280px;
+          width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
           border: none;
           height: 40px;
+          font-size: 14px;
+          font-weight: 300;
           margin-right: 25px;
           box-sizing: border-box;
           outline: none;
@@ -75,7 +78,7 @@
         }
         .month {
           position: relative;
-          width: 280px;
+          width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
           border: none;
@@ -91,7 +94,7 @@
         }
         .sort__by {
           position: relative;
-          width: 280px;
+          width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
           border: none;
@@ -107,7 +110,7 @@
         }
         .button {
           position: relative;
-          width: 280px;
+          width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
           border: none;
@@ -130,7 +133,9 @@
       display: none;
       .form__hide_advanced {
         display: flex;
-        margin-top: 25px;
+        margin-left: 32px;
+        margin-top: 23px;
+
       }
       .form__hide {
         span {
@@ -142,7 +147,7 @@
         }
         .list__categories {
           position: relative;
-          width: 280px;
+          width: 285px;
           padding: 8px 10px;
           border-radius: 5px;
           border: none;
@@ -164,7 +169,7 @@
         }
         .destinations {
           position: relative;
-          width: 280px;
+          width: 285px;
           padding: 8px 10px;
           border-radius: 5px;
           border: none;
@@ -180,7 +185,7 @@
         }
         .budget {
           position: relative;
-          width: 280px;
+          width: 285px;
           padding: 8px 10px;
           border-radius: 5px;
           border: none;
@@ -200,6 +205,7 @@
       }
     }
     .tour__addvanced__search {
+      margin-left: 32px;
       margin-top: 10px;
       .icon_down {
         &::before {

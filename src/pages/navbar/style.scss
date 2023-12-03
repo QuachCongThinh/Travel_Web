@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+    z-index: 999;
     margin-top: 10px;
     margin-left: 12px;
     ul {
@@ -208,7 +208,7 @@
   transition: all 0.3s ease;
   background: #fff;
   display: flex;
-  z-index: 1000;
+  z-index: 10;
   width: 100%;
   height: 75px;
   position: fixed;

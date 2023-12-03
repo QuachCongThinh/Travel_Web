@@ -2,9 +2,9 @@ import { useState } from "react";
 import {
   AiOutlineSearch,
   AiTwotoneCalendar,
-  AiOutlineSwap,
   AiOutlineDown,
 } from "react-icons/ai";
+import { TfiExchangeVertical } from "react-icons/tfi";
 
 export function SearchForm() {
   const [month] = useState([
@@ -49,8 +49,10 @@ export function SearchForm() {
     const formHide = document.querySelector(
       ".container__header .form #tour__advanced"
     );
-    const toggle = document.querySelector(".container__header .form .tour__addvanced__search .icon_down");
-    toggle.onclick = function(){
+    const toggle = document.querySelector(
+      ".container__header .form .tour__addvanced__search .icon_down"
+    );
+    toggle.onclick = function () {
       formHide.classList.toggle("show");
       toggle.classList.toggle("icon_up");
     };
@@ -63,7 +65,7 @@ export function SearchForm() {
           <div className="form__show">
             <input
               className="form__search"
-              type="search"
+              type="text"
               placeholder="Destination, city "
             ></input>
             <span className="icon__search">
@@ -74,7 +76,9 @@ export function SearchForm() {
             <select className="month">
               <option value="">Any Month</option>
               {month.map((item, monthKey) => (
-                <option key={monthKey} value={item}>{item}</option>
+                <option key={monthKey} value={item}>
+                  {item}
+                </option>
               ))}
             </select>
             <span className="icon__calendar">
@@ -85,11 +89,13 @@ export function SearchForm() {
             <select className="sort__by">
               <option value="">Sort By Date</option>
               {sort.map((item, sortKey) => (
-                <option key={sortKey} value={item}>{item}</option>
+                <option key={sortKey} value={item}>
+                  {item}
+                </option>
               ))}
             </select>
             <span className="icon__exchange">
-              <AiOutlineSwap />
+            <TfiExchangeVertical />
             </span>
           </div>
           <div className="form__show">
@@ -102,7 +108,9 @@ export function SearchForm() {
               <select className="list__categories">
                 <option value="">Any Categories</option>
                 {categories.map((item, cateKey) => (
-                  <option key={cateKey} value={item}>{item}</option>
+                  <option key={cateKey} value={item}>
+                    {item}
+                  </option>
                 ))}
               </select>
               <span className="icon__arrowDown">
@@ -113,7 +121,9 @@ export function SearchForm() {
               <select className="destinations">
                 <option value="">Any Destination</option>
                 {destination.map((item, desKey) => (
-                  <option key={desKey} value={item}>{item}</option>
+                  <option key={desKey} value={item}>
+                    {item}
+                  </option>
                 ))}
               </select>
               <span className="icon__arrowDown">
