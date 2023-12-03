@@ -167,8 +167,8 @@
         cursor: pointer;
         z-index: 2;
         background: #ff4a52;
-        padding: 3px 10px 2px 10px;
-        bottom: 65px;
+        padding: 0 10px 0 10px;
+        bottom: 68px;
 
         .normal__price {
           &::before {
@@ -204,14 +204,13 @@
         font-size: 18px;
         font-weight: 700;
         position: absolute;
-        bottom: 35px;
-        margin-top: 5px;
+        bottom: 33px;
         margin-left: 15px;
         z-index: 1;
       }
       .evaluate {
         margin-left: 15px;
-        bottom: 20px;
+        bottom: 10px;
         position: absolute;
         display: flex;
         z-index: 1;
@@ -219,7 +218,7 @@
           display: flex;
           cursor: pointer;
           margin-right: 1px;
-          font-size: 15px;
+          font-size: 13px;
           &::before {
             content: "\f005";
             font-family: "FontAwesome";

@@ -412,9 +412,48 @@ const NavBarFixed = () => {
       ],
     },
   ]);
+
+  window.addEventListener("load", () => {
+    const openMenu = document.getElementById("logo__menu_fixed");
+    const menuBar = document.getElementById("main__menubar");
+    const closeMenu = document.getElementById("icon__menubar");
+    const body = document.querySelector("body");
+    const wrapper = document.getElementById("wrapper");
+
+    openMenu.onclick = function () {
+      menuBar.classList.toggle("active");
+      body.classList.toggle("scroll__hide");
+      wrapper.classList.toggle("blur");
+    };
+    closeMenu.onclick = function () {
+      menuBar.classList.remove("active");
+      body.classList.remove("scroll__hide");
+      wrapper.classList.remove("blur");
+    };
+  });
+
+  var prevScrollpos = window.scrollY;
+  window.onscroll = function () {
+    var currentScrollPos = window.scrollY;
+    if (prevScrollpos > currentScrollPos) {
+      document.querySelector(".navbarFixed").classList.add("show");
+    } else {
+      document.querySelector(".navbarFixed").classList.remove("show");
+    }
+    if (currentScrollPos === 0) {
+      document.querySelector(".navbarFixed").classList.add("hidden");
+    } else {
+      document.querySelector(".navbarFixed").classList.remove("hidden");
+    }
+    if (prevScrollpos < currentScrollPos) {
+      document.querySelector(".navbarFixed").classList.add("hidden");
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
     <>
-      {/* <div className="navbarFixed">
+      <div className="navbarFixed">
         <div className="navbar__logo_black">
           <img src={images.logo_black} alt="Logo"></img>
         </div>
@@ -431,7 +470,9 @@ const NavBarFixed = () => {
                       <li key={`${menuKey}-${childKey}`}>
                         <Link
                           className={`${
-                            childItem.submenu ? "link__menuFiex" : "link__menuFiex"
+                            childItem.submenu
+                              ? "link__menuFiex"
+                              : "link_menuFiex"
                           }`}
                           to={childItem.path}
                         >
@@ -458,7 +499,7 @@ const NavBarFixed = () => {
             ))}
           </ul>
           <div className="menu__cart">
-            <div id="logo__menu">
+            <div id="logo__menu_fixed">
               <AiOutlineMenu />
             </div>
             <div className="logo__cart">
@@ -467,7 +508,7 @@ const NavBarFixed = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
