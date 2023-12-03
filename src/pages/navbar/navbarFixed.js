@@ -3,7 +3,8 @@ import images from "../../assets/images";
 import "./style.scss";
 import "../../style/all.scss";
 import { Link } from "react-router-dom";
-import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { IoIosMenu } from "react-icons/io";
 
 const NavBarFixed = () => {
   const [menus] = useState([
@@ -471,8 +472,8 @@ const NavBarFixed = () => {
                         <Link
                           className={`${
                             childItem.submenu
-                              ? "link__menuFiex"
-                              : "link_menuFiex"
+                              ? "link__menuFixed"
+                              : "link_menuFixed"
                           }`}
                           to={childItem.path}
                         >
@@ -500,7 +501,7 @@ const NavBarFixed = () => {
           </ul>
           <div className="menu__cart">
             <div id="logo__menu_fixed">
-              <AiOutlineMenu />
+              <IoIosMenu />
             </div>
             <div className="logo__cart">
               <AiOutlineShoppingCart />

@@ -8,30 +8,30 @@
 
 .navbar {
   display: flex;
-  z-index: 1000;
   width: 100%;
-  top: -70px;
   .navbar__logo {
+    cursor: pointer;
     img {
       width: 92px;
       position: relative;
-      padding: 24px 0;
-      z-index: 999;
+      margin-top: 26px;
+      z-index: 100;
       vertical-align: middle;
-      margin-left: 330px;
+      margin-left: 329px;
     }
   }
   .navbar__menu {
     width: 100%;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
-    margin-top: -5px;
-    margin-left: 13px;
+    z-index: 3;
+    margin-top: 10px;
+    margin-left: 12px;
     ul {
       display: flex;
-      margin: 0 10px 0 20px;
+      margin: 0 15px 0 28px;
       li {
         cursor: pointer;
         position: relative;
@@ -39,18 +39,17 @@
         padding: 0 13px;
         margin-top: 5px;
         .menu {
-          padding: 20px 0;
           text-decoration: none;
           color: #fff;
           font-weight: 500;
           font-size: 13px;
           transition: all 0.3s;
+          padding: 30px 0;
           &::after {
             font-family: "FontAwesome";
             content: "\f107";
             display: inline-block;
             margin-left: 8px;
-            line-height: 20px;
           }
         }
       }
@@ -60,7 +59,7 @@
       }
     }
     .header__menu__dropdown {
-      box-shadow: 0 5px 40px rgba(0,0,0,.15);
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
       border-radius: 5px;
       margin-top: 22px;
       margin-left: -20px;
@@ -122,7 +121,7 @@
       }
     }
     .header__menu__horizontal {
-      box-shadow: 0 5px 40px rgba(0,0,0,.15);
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
       width: 222px;
       margin-left: 230px;
       top: -7px;
@@ -197,43 +196,46 @@
 }
 
 //Navbar Fixed
-.hidden{
+
+.hidden {
   opacity: 0;
 }
-.show{
+.show {
   transform: translateY(0) !important;
 }
-
 .navbarFixed {
-  transform: translateY(-70px);
+  transform: translateY(-80px);
   transition: all 0.3s ease;
   background: #fff;
   display: flex;
-  z-index: 999;
+  z-index: 1000;
   width: 100%;
+  height: 75px;
   position: fixed;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   .navbar__logo_black {
     img {
+      cursor: pointer;
       width: 92px;
       position: relative;
-      padding: 24px 0;
+      margin-top: 26px;
       z-index: 3;
       vertical-align: middle;
-      margin-left: 330px;
+      margin-left: 329px;
     }
   }
   .navbar__menu_fixed {
     width: 100%;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
-    margin-top: -5px;
-    margin-left: 13px;
+    margin-top: 10px;
+    margin-left: 12px;
     ul {
       display: flex;
-      margin: 0 10px 0 20px;
+      margin: 0 15px 0 28px;
       li {
         cursor: pointer;
         position: relative;
@@ -241,18 +243,17 @@
         padding: 0 13px;
         margin-top: 5px;
         .menu {
-          padding: 20px 0;
           text-decoration: none;
           color: black;
           font-weight: 500;
           font-size: 13px;
           transition: all 0.3s;
+          padding: 30px 0;
           &::after {
             font-family: "FontAwesome";
             content: "\f107";
             display: inline-block;
             margin-left: 8px;
-            line-height: 20px;
           }
         }
       }
@@ -262,7 +263,7 @@
       }
     }
     .header__menuFixed__dropdown {
-      box-shadow: 0 5px 40px rgba(0,0,0,.15);
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
       border-radius: 5px;
       margin-top: 22px;
       margin-left: -20px;
@@ -280,7 +281,7 @@
       padding: 2px 8px;
 
       li {
-        .link__menuFiex {
+        .link__menuFixed {
           text-decoration: none;
           color: #000;
           font-size: 13px;
@@ -308,7 +309,7 @@
           content: "";
           border: none;
         }
-        .link_menuFiex {
+        .link_menuFixed {
           text-decoration: none;
           color: #000;
           font-size: 13px;
@@ -324,7 +325,7 @@
       }
     }
     .header__menuFixed__horizontal {
-      box-shadow: 0 5px 40px rgba(0,0,0,.15);
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
       width: 230px;
       margin-left: 231px;
       top: -7px;

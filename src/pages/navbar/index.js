@@ -3,7 +3,8 @@ import images from "../../assets/images";
 import "./style.scss";
 import "../../style/all.scss";
 import { Link } from "react-router-dom";
-import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { IoIosMenu } from "react-icons/io";
 
 const Navbar = () => {
   const [menus] = useState([
@@ -476,7 +477,7 @@ const Navbar = () => {
         </ul>
         <div className="menu__cart">
           <div id="logo__menu">
-            <AiOutlineMenu />
+            <IoIosMenu />
           </div>
           <div className="logo__cart">
             <AiOutlineShoppingCart />
