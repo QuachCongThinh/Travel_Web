@@ -1,34 +1,33 @@
 @import "../../style/all.scss";
 @import "../../style/theme.scss";
+@import "../../style/responsive.scss";
 
 .blur {
   -webkit-filter: blur(20px);
   filter: blur(20px);
 }
-
 .navbar {
   display: flex;
-  width: 100%;
   .navbar__logo {
     cursor: pointer;
     img {
       width: 92px;
       position: relative;
       margin-top: 26px;
-      z-index: 100;
+      margin-left: 2px;
+      z-index: 2;
       vertical-align: middle;
-      margin-left: 329px;
+      cursor: pointer;
     }
   }
   .navbar__menu {
     width: 100%;
-    height: 45px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
-    z-index: 999;
-    margin-top: 10px;
-    margin-left: 12px;
+    margin-top: 15px;
+    margin-right: 10px;
+    z-index: 1000;
     ul {
       display: flex;
       margin: 0 15px 0 28px;
@@ -80,11 +79,13 @@
         .link__menu {
           text-decoration: none;
           color: $navar-menu;
+          position: relative;
           font-size: 13px;
           &::after {
             font-family: "FontAwesome";
             content: "\f105";
             margin-top: 2px;
+            position: absolute;
             line-height: 20px;
             float: right;
           }
@@ -151,7 +152,6 @@
 
     .menu__cart {
       display: flex;
-      margin-right: 10px;
       position: relative;
       align-items: center;
       #logo__menu {
@@ -169,7 +169,7 @@
         -ms-filter: "FlipH";
       }
 
-      .logo__cart {
+      #logo__cart {
         display: flex;
         align-items: center;
         margin-top: 5px;
@@ -205,10 +205,10 @@
 }
 .navbarFixed {
   transform: translateY(-80px);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   background: #fff;
   display: flex;
-  z-index: 10;
+  z-index: 1000;
   width: 100%;
   height: 75px;
   position: fixed;
@@ -219,20 +219,20 @@
       width: 92px;
       position: relative;
       margin-top: 26px;
-      z-index: 3;
       vertical-align: middle;
       margin-left: 329px;
+      z-index: 3;
     }
   }
   .navbar__menu_fixed {
-    width: 100%;
     height: 45px;
+    width: 100%;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
     margin-top: 10px;
-    margin-left: 12px;
+    margin-left: 8px;
     ul {
       display: flex;
       margin: 0 15px 0 28px;
@@ -372,7 +372,7 @@
         filter: FlipH;
         -ms-filter: "FlipH";
       }
-      .logo__cart {
+      #logo__cart {
         display: flex;
         align-items: center;
         margin-top: 5px;

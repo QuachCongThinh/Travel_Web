@@ -503,7 +503,7 @@ const NavBarFixed = () => {
             <div id="logo__menu_fixed">
               <IoIosMenu />
             </div>
-            <div className="logo__cart">
+            <div id="logo__cart">
               <AiOutlineShoppingCart />
               <span>0</span>
             </div>

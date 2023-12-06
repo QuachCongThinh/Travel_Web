@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import images from "../../assets/images";
 import "./style.scss";
 import "../../style/all.scss";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
+import { waitFor } from "@testing-library/react";
 
 const Navbar = () => {
   const [menus] = useState([
@@ -414,24 +415,28 @@ const Navbar = () => {
     },
   ]);
 
-  window.addEventListener("load", () => {
-    const openMenu = document.getElementById("logo__menu");
-    const menuBar = document.getElementById("main__menubar");
-    const closeMenu = document.getElementById("icon__menubar");
-    const body = document.querySelector("body");
-    const wrapper = document.getElementById("wrapper");
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      const openMenu = document.querySelector(
+        ".navbar .navbar__menu .menu__cart svg"
+      );
+      const menuBar = document.getElementById("main__menubar");
+      const closeMenu = document.getElementById("icon__menubar");
+      const body = document.querySelector("body");
+      const wrapper = document.getElementById("wrapper");
 
-    openMenu.onclick = function () {
-      menuBar.classList.toggle("active");
-      body.classList.toggle("scroll__hide");
-      wrapper.classList.toggle("blur");
-    };
-    closeMenu.onclick = function () {
-      menuBar.classList.remove("active");
-      body.classList.remove("scroll__hide");
-      wrapper.classList.remove("blur");
-    };
-  });
+      openMenu.onclick = function () {
+        menuBar.classList.toggle("active");
+        body.classList.toggle("scroll__hide");
+        wrapper.classList.toggle("blur");
+      };
+      closeMenu.onclick = function () {
+        menuBar.classList.remove("active");
+        body.classList.remove("scroll__hide");
+        wrapper.classList.remove("blur");
+      };
+    });
+  }, []);
 
   return (
     <div className="navbar">
@@ -479,7 +484,7 @@ const Navbar = () => {
           <div id="logo__menu">
             <IoIosMenu />
           </div>
-          <div className="logo__cart">
+          <div id="logo__cart">
             <AiOutlineShoppingCart />
             <span>0</span>
           </div>

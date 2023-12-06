@@ -9,11 +9,11 @@
 .widget {
   display: flex;
   list-style: none;
-  margin-top: 60px;
 
   .widget-1 {
     width: 400px;
     list-style: none;
+    margin-top: 60px;
     .widget_title {
       font-size: 17px;
       font-weight: 700;
@@ -34,6 +34,7 @@
   }
   .widget-2 {
     width: 400px;
+    margin-top: 60px;
     margin-left: 40px;
     .widget_title {
       font-size: 17px;
@@ -153,6 +154,7 @@
   }
   .widget-3 {
     cursor: pointer;
+    margin-top: 60px;
     width: 400px;
     .widget_title {
       font-size: 18px;

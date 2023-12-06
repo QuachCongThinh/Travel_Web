@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BackToTop } from "../button/backToTop";
+import { BackToTop } from "../hook/backToTop";
 
 export function FooterBar() {
   const [menusFooter] = useState({
