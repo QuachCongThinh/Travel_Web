@@ -5,7 +5,6 @@ import "../../style/all.scss";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
-import { waitFor } from "@testing-library/react";
 
 const Navbar = () => {
   const [menus] = useState([
@@ -446,7 +445,7 @@ const Navbar = () => {
       <div className="navbar__menu">
         <ul>
           {menus.map((menu, menuKey) => (
-            <li key={menuKey} className="menu__parent">
+            <li key={menuKey}>
               <Link to={menu.path} className="menu">
                 {menu.name}
               </Link>

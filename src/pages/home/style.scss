@@ -1,18 +1,28 @@
 @import "../../style/all.scss";
 @import "../../style/theme.scss";
+@import "../../style/responsive.scss";
 
 .destination__cotainer {
+  max-width: 100%;
   .destination__content {
     margin-top: 56px;
     text-align: center;
+    max-width: 100%;
     h2 {
+      display: inline-block;
       font-size: 36px;
       font-weight: 700;
+      @include Responsive($WIDE_DEVICE){
+        font-size: 24px;
+      }
     }
     p {
       font-size: 15px;
       font-weight: 500;
       color: $title-color;
+    }
+    @include Responsive($WIDE_DEVICE){
+      margin-top: 31px;
     }
   }
   .destination__details {
@@ -44,6 +54,9 @@
           width: 100%;
           border-radius: 5px;
           object-fit: cover;
+          @include Responsive($TABLE_DEVICE) {
+            min-height: 170px;
+          }
         }
         &::after {
           content: "";
@@ -63,31 +76,64 @@
         }
         &:nth-child(2) {
           margin-left: 30px;
+          @include Responsive($WIDE_DEVICE){
+            margin-left: 0;
+          }
         }
         &:nth-child(3) {
           margin: 0 30px;
+          @include Responsive($WIDE_DEVICE){
+            margin-left: 0;
+            margin-bottom: 25px;
+          }
         }
         &:hover {
           box-shadow: 0 20px 40px 4px rgba(0, 0, 0, 0.1);
           transform: translateY(-5px);
           border-radius: 5px;
         }
+        @include Responsive($WIDE_DEVICE){
+          margin-bottom: 25px;
+        }
       }
+      @include Responsive($WIDE_DEVICE) {
+        display: grid;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin: 30px 0;
+      }
+    }
+    @include Responsive($MEDIUM_DEVICE) {
+      padding: 0 55px;
+    }
+    @include Responsive($TABLE_DEVICE) {
+      padding: 0 30px;
+    }
+    @include Responsive($WIDE_DEVICE){
+      padding: 0 20px;
     }
   }
 }
 .bestTrips {
+  max-width: 100%;
   .bestTrips__content {
     margin-top: 70px;
     text-align: center;
     h2 {
       font-size: 36px;
       font-weight: 700;
+      @include Responsive($WIDE_DEVICE){
+        font-size: 24px;
+      }
     }
     p {
       font-size: 15px;
       font-weight: 500;
       color: #8d9199;
+    }
+    @include Responsive($WIDE_DEVICE){
+      margin-top: 45px;
     }
   }
   .bestTrips__details {
@@ -101,6 +147,12 @@
         transition: all 0.3s;
         &:nth-child(2) {
           margin: 0 30px;
+          @include Responsive($WIDE_DEVICE) {
+            margin: 0;
+          }
+          @include Responsive($WIDE_DEVICE){
+            margin-bottom: 25px;
+          }
         }
         &:nth-child(3) .sale {
           position: absolute;
@@ -128,6 +180,12 @@
             min-height: 230px;
             width: 100%;
             object-fit: cover;
+            @include Responsive($MEDIUM_DEVICE) {
+              min-height: 100px;
+            }
+            @include Responsive($TABLE_DEVICE) {
+              min-height: 50px;
+            }
           }
           .tour__price {
             position: absolute;
@@ -198,12 +256,18 @@
               &:nth-child(5):before {
                 content: "\f006";
                 font-family: "FontAwesome";
+                color: rgb(218, 218, 218);
               }
             }
             .quantity {
               font-size: 12px;
               font-weight: 600;
               margin-left: 5px;
+              @include Responsive($TABLE_DEVICE) {
+                position: absolute;
+                left: 11px;
+                bottom: -13px;
+              }
             }
             .day {
               svg {
@@ -224,33 +288,59 @@
           box-shadow: 0 20px 40px 4px rgba(0, 0, 0, 0.1);
           transform: translateY(-5px);
         }
+        @include Responsive($WIDE_DEVICE){
+          margin-bottom: 25px;
+        }
       }
+      @include Responsive($TABLE_DEVICE) {
+        height: 340px;
+      }
+      @include Responsive($WIDE_DEVICE){
+        display: grid;
+        flex-direction: column;
+      }
+    }
+    @include Responsive($MEDIUM_DEVICE) {
+      padding: 0 55px;
+    }
+    @include Responsive($TABLE_DEVICE) {
+      padding: 0 30px;
+    }
+    @include Responsive($WIDE_DEVICE) {
+      padding: 0 20px;
     }
   }
 }
 .choose {
+  max-width: 100%;
   text-align: center;
   .choose__content {
     margin-top: 70px;
     h2 {
       font-size: 36px;
       font-weight: 700;
+      @include Responsive($WIDE_DEVICE){
+        font-size: 24px;
+      }
     }
     p {
       font-size: 15px;
       font-weight: 500;
       color: #8d9199;
+      
+    }
+    @include Responsive($WIDE_DEVICE){
+      margin-top: 0;
     }
   }
   .choose__details {
     margin-top: 40px;
-    margin-bottom: 40px;
     ul {
       list-style: none;
       display: flex;
       justify-content: space-between;
       li {
-        width: 30.66%;
+        width: 28.66%;
         img {
           width: 150px;
           height: 150px;
@@ -261,16 +351,42 @@
           font-weight: 700;
         }
         .description {
-          font-size: 15px;
+          font-size: 14px;
+          line-height: 1.7;
+          font-weight: 400;
           margin-top: 10px;
           color: #444;
+          @include Responsive($WIDE_DEVICE){
+            padding: 0 35px;
+          }
+        }
+        @include Responsive($WIDE_DEVICE) {
+          width: 100%;
+          &:nth-child(2){
+            margin-top: 50px;
+          }
+          &:nth-child(3){
+            margin-top: 50px;
+          }
         }
       }
+      @include Responsive($WIDE_DEVICE) {
+        flex-direction: column;
+      }
+    }
+    @include Responsive($MEDIUM_DEVICE) {
+      padding: 0 55px;
+    }
+    @include Responsive($TABLE_DEVICE) {
+      padding: 0 30px;
+    }
+    @include Responsive($WIDE_DEVICE){
+      margin-top: 60px;
     }
   }
 }
 .background {
-  margin: 60px 0;
+  margin: 70px 0 60px 0;
   img {
     height: 60vh;
     background-size: cover;
@@ -280,16 +396,23 @@
   }
 }
 .articles {
+  max-width: 100%;
   .articles__content {
     text-align: center;
     h2 {
       font-size: 36px;
       font-weight: 700;
+      @include Responsive($WIDE_DEVICE){
+        font-size: 24px;
+      }
     }
     p {
       font-size: 15px;
       font-weight: 500;
       color: #8d9199;
+      @include Responsive($WIDE_DEVICE){
+        padding: 0 10px;
+      }
     }
   }
   .articles__details {
@@ -301,6 +424,15 @@
       li {
         &:nth-child(2) {
           margin: 0 35px;
+          @include Responsive($TABLE_DEVICE) {
+            margin: 0 20px;
+          }
+          @include Responsive($WIDE_DEVICE){
+            margin: 0;
+          }
+          @include Responsive($WIDE_DEVICE){
+            margin-bottom: 25px;
+           }
         }
         cursor: pointer;
         transition: all 0.3s;
@@ -349,7 +481,24 @@
             }
           }
         }
+       @include Responsive($WIDE_DEVICE){
+        margin-bottom: 25px;
+       }
       }
+      @include Responsive($WIDE_DEVICE){
+        display: grid;
+        flex-direction: column;
+      }
+    }
+    @include Responsive($MEDIUM_DEVICE) {
+      padding: 0 55px;
+    }
+    @include Responsive($TABLE_DEVICE) {
+      padding: 0 30px;
+    }
+    @include Responsive($WIDE_DEVICE){
+      padding:  0 20px;
+      margin-top: 40px;
     }
   }
 }

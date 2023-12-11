@@ -3,7 +3,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 export function Articles({ data }) {
   return (
-    <section>
+    <>
       <div className="articles">
         <div className="articles__content">
           <h2>{data.data?.title}</h2>
@@ -29,6 +29,6 @@ export function Articles({ data }) {
           </ul>
         </div>
       </div>
-    </section>
+    </>
   );
 }

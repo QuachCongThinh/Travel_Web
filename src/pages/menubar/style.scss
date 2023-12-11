@@ -1,4 +1,5 @@
 @import "../../style/all.scss";
+@import "../../style/responsive.scss";
 
 .active {
   right: 0 !important;
@@ -303,5 +304,8 @@
         }
       }
     }
+  }
+  @include Responsive($WIDE_DEVICE){
+    width: 270px;
   }
 }

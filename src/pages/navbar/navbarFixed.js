@@ -461,7 +461,7 @@ const NavBarFixed = () => {
         <div className="navbar__menu_fixed">
           <ul>
             {menus.map((menu, menuKey) => (
-              <li key={menuKey} className="menu__parent">
+              <li key={menuKey}>
                 <Link to={menu.path} className="menu">
                   {menu.name}
                 </Link>

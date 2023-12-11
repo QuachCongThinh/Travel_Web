@@ -25,20 +25,18 @@ export function FooterBar() {
   });
 
   return (
-    <section>
-      <div className="footer__bar">
-        <div className="footer__content">
-          <div className="copyright">{menusFooter.title}</div>
-          <div className="menu__footer">
-            <ul>
-              {menusFooter.menus?.map((item, menuKey) => (
-                <li key={menuKey}>{item.name}</li>
-              ))}
-            </ul>
-            <BackToTop />
-          </div>
+    <div className="footer__bar">
+      <div className="footer__content">
+        <div className="copyright">{menusFooter.title}</div>
+        <div className="menu__footer">
+          <ul>
+            {menusFooter.menus?.map((item, menuKey) => (
+              <li key={menuKey}>{item.name}</li>
+            ))}
+          </ul>
+          <BackToTop />
         </div>
       </div>
-    </section>
+    </div>
   );
 }

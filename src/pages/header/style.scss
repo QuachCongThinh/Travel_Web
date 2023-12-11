@@ -3,24 +3,31 @@
 
 .header {
   position: relative;
+  max-width: 100%;
   .header__banner {
     img {
       width: 100%;
-      height: 885px;
+      height: 865px;
+      position: relative;
       margin-top: -140px;
       z-index: -1;
-      position: relative;
       object-fit: cover;
+      @include Responsive($WIDE_DEVICE){
+        height: 565px;
+      }
     }
     &::before {
       position: absolute;
       content: "";
       min-width: 100%;
-      height: 885px;
+      height: 865px;
       margin-top: -140px;
       z-index: 1;
       background: #000;
       opacity: 0.3;
+      @include Responsive($WIDE_DEVICE){
+        height: 565px;
+      }
     }
   }
 }
@@ -30,12 +37,15 @@
   width: 100%;
   z-index: 3;
   .title {
-    margin-top: 226px;
+    margin-top: 207px;
     h1 {
       font-size: 36px;
       color: #fff;
       text-align: center;
       line-height: 49px;
+      @include Responsive($WIDE_DEVICE){
+        font-size: 24px !important;
+      }
     }
     h3 {
       color: #cccccc;
@@ -43,18 +53,21 @@
       font-size: 15px;
       font-weight: 500;
     }
+    @include Responsive($WIDE_DEVICE){
+      margin-top: 5px !important;
+      line-height: 6px;
+    }
   }
 
   .form {
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    transform: translateX(-50%);
-    .tour__search {
-      margin-left: 32px;
+    max-width: 100%;
+    width: 1212px;
+    margin: auto;
+    margin-top: 20px;
+    #tour__search {
       display: flex;
+      max-width: 100%;
       .form__show {
-        margin-top: 23px;
         svg {
           position: absolute;
           margin-top: 10px;
@@ -63,6 +76,7 @@
           color: #7a7a7a;
         }
         .form__search {
+          max-width: 100%;
           position: relative;
           width: 285px;
           padding: 8px 15px;
@@ -71,22 +85,22 @@
           height: 40px;
           font-size: 14px;
           font-weight: 300;
-          margin-right: 25px;
+          margin-right: 22px;
           box-sizing: border-box;
           outline: none;
-          border: 1px solid #dce0e0;
         }
         .month {
+          outline: none;
           position: relative;
+          max-width: 100%;
           width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
-          border: none;
           height: 40px;
           color: #4d4d4d;
           font-size: 14px;
           font-weight: 300;
-          margin-right: 25px;
+          margin-right: 22px;
           box-sizing: border-box;
           -webkit-appearance: none;
           -moz-appearance: none;
@@ -95,14 +109,16 @@
           border: 1px solid #dce0e0;
         }
         .sort__by {
+          outline: none;
           position: relative;
           width: 285px;
+          max-width: 100%;
           padding: 8px 15px;
           border-radius: 5px;
           border: none;
           height: 40px;
           color: #4d4d4d;
-          margin-right: 25px;
+          margin-right: 22px;
           font-size: 14px;
           font-weight: 300;
           box-sizing: border-box;
@@ -113,35 +129,40 @@
           border: 1px solid #dce0e0;
         }
         .button {
+          cursor: pointer;
           position: relative;
           width: 285px;
+          max-width: 100%;
           padding: 8px 15px;
           border-radius: 5px;
+          max-width: 100%;
           border: none;
           font-size: 14px;
           font-weight: 400;
           height: 40px;
           color: #fff;
           background: #ff4a52;
-          margin-right: 25px;
           box-sizing: border-box;
-
           &:hover {
             background: #1ec6b6;
           }
         }
       }
     }
-    .show{
+    .show {
       display: block !important;
     }
     #tour__advanced {
       display: none;
       .form__hide_advanced {
         display: flex;
-        margin-left: 32px;
         margin-top: 23px;
-
+      }
+      svg {
+        position: absolute;
+        margin-top: 6px;
+        margin-left: -5px;
+        color: #7a7a7a;
       }
       .form__hide {
         span {
@@ -152,7 +173,9 @@
           margin-left: -45px;
         }
         .list__categories {
+          outline: none;
           position: relative;
+          max-width: 100%;
           width: 285px;
           padding: 8px 10px;
           border-radius: 5px;
@@ -161,7 +184,7 @@
           color: #4d4d4d;
           font-size: 14px;
           font-weight: 300;
-          margin-right: 25px;
+          margin-right: 22px;
           box-sizing: border-box;
           -webkit-appearance: none;
           -moz-appearance: none;
@@ -169,23 +192,19 @@
           text-overflow: "";
           border: 1px solid #dce0e0;
         }
-        svg {
-          position: absolute;
-          margin-top: 6px;
-          margin-left: -5px;
-          color: #7a7a7a;
-        }
         .destinations {
+          outline: none;
           position: relative;
           width: 285px;
           padding: 8px 10px;
+          max-width: 100%;
           border-radius: 5px;
           font-size: 14px;
           font-weight: 300;
           border: none;
           height: 40px;
           color: #4d4d4d;
-          margin-right: 25px;
+          margin-right: 22px;
           box-sizing: border-box;
           -webkit-appearance: none;
           -moz-appearance: none;
@@ -194,16 +213,18 @@
           text-overflow: "";
         }
         .budget {
+          outline: none;
           position: relative;
           width: 285px;
           padding: 8px 10px;
           border-radius: 5px;
           border: none;
+          max-width: 100%;
           font-size: 14px;
           font-weight: 300;
           height: 40px;
           color: #707070;
-          margin-right: 25px;
+          margin-right: 22px;
           box-sizing: border-box;
           border: 1px solid #dce0e0;
           outline: none;
@@ -217,7 +238,6 @@
       }
     }
     .tour__addvanced__search {
-      margin-left: 32px;
       margin-top: 10px;
       .icon_down {
         &::before {

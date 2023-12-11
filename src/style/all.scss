@@ -22,11 +22,6 @@ body {
   width: 1250px;
   margin: auto;
 }
-.container {
-  width: 100%;
-  max-width: 1250px;
-  margin: auto;
-}
 .header__banner {
   max-width: 100%;
 }
@@ -49,20 +44,5 @@ body {
 .widget {
   max-width: 1250px;
   width: 100%;
-}
-
-//responsive
-@include Responsive($DESKTOP) {
-}
-
-@include Responsive($TABLE_DEVICE) {
-}
-
-@include Responsive($MEDIUM_DEVICE) {
-}
-
-@include Responsive($WIDE_DEVICE) {
-}
-
-@include Responsive($SMALL_DEVICE) {
+  margin: auto;
 }

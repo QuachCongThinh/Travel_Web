@@ -51,18 +51,14 @@ const Footer = () => {
   }, []);
 
   return (
-    <>
-      <div className="footer">
-        <div className="container">
-          <ul className="widget">
-            <Awards data={award} />
-            <Contact data={contact} social={social} />
-            <RecentTrips data={trips} />
-          </ul>
-          <FooterBar />
-        </div>
-      </div>
-    </>
+    <div className="footer">
+        <ul className="widget">
+          <Awards data={award} />
+          <Contact data={contact} social={social} />
+          <RecentTrips data={trips} />
+        </ul>
+        <FooterBar />
+    </div>
   );
 };
 export default Footer;

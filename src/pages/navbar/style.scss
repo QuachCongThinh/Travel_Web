@@ -7,54 +7,74 @@
   filter: blur(20px);
 }
 .navbar {
+  max-width: 100%;
   display: flex;
+  height: 75px;
   .navbar__logo {
-    cursor: pointer;
     img {
+      cursor: pointer;
       width: 92px;
       position: relative;
       margin-top: 26px;
-      margin-left: 2px;
-      z-index: 2;
-      vertical-align: middle;
-      cursor: pointer;
+      margin-left: 3px;
+      z-index: 3;
+      @include Responsive($MEDIUM_DEVICE) {
+        margin-left: 54px;
+      }
+      @include Responsive($TABLE_DEVICE) {
+        margin-left: 60px;
+      }
+      @include Responsive($WIDE_DEVICE){
+        margin-left: 30px;
+        margin-top: 20px;
+      }
     }
   }
   .navbar__menu {
+    height: 45px;
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 15px;
-    margin-right: 10px;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-right: 2px;
     ul {
       display: flex;
-      margin: 0 15px 0 28px;
       li {
         cursor: pointer;
         position: relative;
         list-style: none;
-        padding: 0 13px;
+        padding: 0 17px 0 10px;
         margin-top: 5px;
         .menu {
           text-decoration: none;
           color: #fff;
           font-weight: 500;
           font-size: 13px;
-          transition: all 0.3s;
-          padding: 30px 0;
+          padding: 40px 0;
           &::after {
             font-family: "FontAwesome";
             content: "\f107";
-            display: inline-block;
             margin-left: 8px;
           }
+        }
+        @include Responsive($MEDIUM_DEVICE) {
+          padding: 0 16px 0 10px;
         }
       }
       li:hover .header__menu__dropdown {
         opacity: 1;
         visibility: visible;
+      }
+      @include Responsive($TABLE_DEVICE) {
+        display: none;
+      }
+      @include Responsive($WIDE_DEVICE) {
+        display: none;
+      }
+      @include Responsive($SMALL_DEVICE) {
+        display: none;
       }
     }
     .header__menu__dropdown {
@@ -65,27 +85,25 @@
       background: #fff;
       display: block;
       position: absolute;
-      width: 250px;
+      width: 240px;
+      padding: 0 0 0 10px;
       font-size: 13px;
       font-weight: 500;
       line-height: 28px;
       z-index: 1;
-      transition: all 0.2s ease;
       opacity: 0;
       visibility: hidden;
-      padding: 2px 8px;
+      transition: all 0.2s;
 
       li {
         .link__menu {
           text-decoration: none;
-          color: $navar-menu;
-          position: relative;
+          color: #000;
           font-size: 13px;
           &::after {
             font-family: "FontAwesome";
             content: "\f105";
             margin-top: 2px;
-            position: absolute;
             line-height: 20px;
             float: right;
           }
@@ -108,9 +126,8 @@
         }
         .link_menu {
           text-decoration: none;
-          color: $navar-menu;
+          color: #000;
           font-size: 13px;
-          line-height: -5px;
         }
         :hover {
           color: #ff4a52;
@@ -123,10 +140,10 @@
     }
     .header__menu__horizontal {
       box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
-      width: 222px;
-      margin-left: 230px;
-      top: -7px;
-      padding: 2px 0;
+      width: 240px;
+      margin-left: 221px;
+      top: -5px;
+      padding: 2px 3px;
       background: #fff;
       display: block;
       border-radius: 5px;
@@ -144,59 +161,81 @@
             content: "";
           }
         }
-        :hover {
-          color: #ff4a52;
-        }
       }
     }
 
     .menu__cart {
       display: flex;
+      margin-right: 10px;
       position: relative;
       align-items: center;
+      cursor: pointer;
       #logo__menu {
-        margin-top: 13px;
+        svg {
+          margin-top: 14px;
+          color: #fff;
+          font-size: 18px;
+        }
+        @include Responsive($TABLE_DEVICE){
+          margin-right: 10px;
+        }
+        @include Responsive($WIDE_DEVICE){
+          margin-right: 10px;
+        }
       }
-      svg {
-        cursor: pointer;
-        color: #fff;
-        font-size: 17px;
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-      }
-
       #logo__cart {
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-        position: relative;
-        margin-left: 10px;
+        svg {
+          display: flex;
+          align-items: center;
+          margin-top: 5px;
+          position: relative;
+          margin-left: 10px;
+          color: #fff;
+          font-size: 17px;
+          -moz-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          filter: FlipH;
+          -ms-filter: "FlipH";
+        }
         span {
           position: absolute;
           color: #fff;
           font-size: 9px;
+          font-weight: 500;
           background: #ff4a52;
           border-radius: 50%;
-          font-weight: 500;
           width: 15px;
           height: 15px;
           display: inline-block;
           text-align: center;
-          top: -8px;
-          left: 11px;
+          top: 5px;
+          left: 37px;
           line-height: 16px;
+          @include Responsive($TABLE_DEVICE){
+            margin-left: 10px;
+          }
+          @include Responsive($WIDE_DEVICE){
+            margin-left: 10px;
+          }
         }
+      }
+      @include Responsive($MEDIUM_DEVICE) {
+        margin-right: 55px;
+      }
+      @include Responsive($TABLE_DEVICE) {
+        margin-right: 41px;
+      }
+      @include Responsive($WIDE_DEVICE){
+        margin-right: 31px;
+        margin-top: -12px;
       }
     }
   }
 }
 
 //Navbar Fixed
-
 .hidden {
   opacity: 0;
 }
@@ -204,11 +243,12 @@
   transform: translateY(0) !important;
 }
 .navbarFixed {
+  max-width: 100%;
   transform: translateY(-80px);
   transition: all 0.4s ease;
   background: #fff;
   display: flex;
-  z-index: 1000;
+  z-index: 999;
   width: 100%;
   height: 75px;
   position: fixed;
@@ -222,26 +262,34 @@
       vertical-align: middle;
       margin-left: 329px;
       z-index: 3;
+      @include Responsive($DESKTOP) {
+        margin-left: 90px;
+      }
+      @include Responsive($MEDIUM_DEVICE) {
+        margin-left: 55px;
+      }
+      @include Responsive($WIDE_DEVICE){
+        margin-left: 30px;
+        margin-top: 20px;
+      }
     }
   }
   .navbar__menu_fixed {
     height: 45px;
     width: 100%;
-    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    margin-left: 8px;
+    margin-left: 39px;
     ul {
       display: flex;
-      margin: 0 15px 0 28px;
       li {
         cursor: pointer;
         position: relative;
         list-style: none;
-        padding: 0 13px;
         margin-top: 5px;
+        padding: 0 17px 0 10px;
         .menu {
           text-decoration: none;
           color: black;
@@ -252,14 +300,25 @@
           &::after {
             font-family: "FontAwesome";
             content: "\f107";
-            display: inline-block;
             margin-left: 8px;
           }
+          &:hover {
+            color: #ff4a52;
+          }
+        }
+        &:nth-child(1) .menu {
+          color: #ff4a52;
+        }
+        @include Responsive($MEDIUM_DEVICE) {
+          padding: 0 16px 0 10px;
         }
       }
       li:hover .header__menuFixed__dropdown {
         opacity: 1;
         visibility: visible;
+      }
+      @include Responsive($WIDE_DEVICE){
+        display: none;
       }
     }
     .header__menuFixed__dropdown {
@@ -327,7 +386,7 @@
     .header__menuFixed__horizontal {
       box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
       width: 230px;
-      margin-left: 231px;
+      margin-left: 233px;
       top: -7px;
       padding: 2px 3px;
       background: #fff;
@@ -347,9 +406,6 @@
             content: "";
           }
         }
-        :hover {
-          color: #ff4a52;
-        }
       }
     }
 
@@ -358,26 +414,34 @@
       margin-right: 10px;
       position: relative;
       align-items: center;
+      cursor: pointer;
       #logo__menu_fixed {
-        margin-top: 13px;
-      }
-      svg {
-        cursor: pointer;
-        color: #000000;
-        font-size: 17px;
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
+        svg {
+          margin-top: 14px;
+          color: #000;
+          font-size: 18px;
+        }
       }
       #logo__cart {
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-        position: relative;
-        margin-left: 10px;
+        svg {
+          display: flex;
+          align-items: center;
+          margin-top: 5px;
+          position: relative;
+          margin-left: 10px;
+          color: #000000;
+          transition: all 0.3s;
+          font-size: 17px;
+          -moz-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          filter: FlipH;
+          -ms-filter: "FlipH";
+          &:hover {
+            color: #ff4a52;
+          }
+        }
         span {
           position: absolute;
           color: #fff;
@@ -389,11 +453,40 @@
           height: 15px;
           display: inline-block;
           text-align: center;
-          top: -8px;
-          left: 11px;
+          top: 5px;
+          left: 37px;
           line-height: 16px;
+          @include Responsive($WIDE_DEVICE){
+            margin-left: 10px;
+          }
+        }
+        @include Responsive($WIDE_DEVICE){
+          margin-left: 10px;
         }
       }
+      @include Responsive($WIDE_DEVICE){
+        margin-right: 25px;
+      }
     }
+    @include Responsive($DESKTOP) {
+      display: flex;
+      justify-content: center;
+      margin-left: 280px;
+    }
+    @include Responsive($MEDIUM_DEVICE) {
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 32px;
+    }
+    @include Responsive($TABLE_DEVICE){
+      display: none;
+    }
+    @include Responsive($WIDE_DEVICE){
+      margin-left: 190px;
+      margin-top: 4px;
+    }
+  }
+  @include Responsive($WIDE_DEVICE){
+    height: 63px;
   }
 }

@@ -59,91 +59,89 @@ export function SearchForm() {
   });
 
   return (
-    <section>
-      <div className="form">
-        <form className="tour__search">
-          <div className="form__show">
-            <input
-              className="form__search"
-              type="text"
-              placeholder="Destination, city "
-            ></input>
-            <span className="icon__search">
-              <AiOutlineSearch />
-            </span>
-          </div>
-          <div className="form__show">
-            <select className="month">
-              <option value="">Any Month</option>
-              {month.map((item, monthKey) => (
-                <option key={monthKey} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-            <span className="icon__calendar">
-              <AiTwotoneCalendar />
-            </span>
-          </div>
-          <div className="form__show">
-            <select className="sort__by">
-              <option value="">Sort By Date</option>
-              {sort.map((item, sortKey) => (
-                <option key={sortKey} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-            <span className="icon__exchange">
-            <TfiExchangeVertical />
-            </span>
-          </div>
-          <div className="form__show">
-            <input value="Search" className="button" type="submit"></input>
-          </div>
-        </form>
-        <form id="tour__advanced">
-          <div className="form__hide_advanced">
-            <div className="form__hide">
-              <select className="list__categories">
-                <option value="">Any Categories</option>
-                {categories.map((item, cateKey) => (
-                  <option key={cateKey} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-              <span className="icon__arrowDown">
-                <AiOutlineDown />
-              </span>
-            </div>
-            <div className="form__hide">
-              <select className="destinations">
-                <option value="">Any Destination</option>
-                {destination.map((item, desKey) => (
-                  <option key={desKey} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-              <span className="icon__arrowDown">
-                <AiOutlineDown />
-              </span>
-            </div>
-            <div className="form__hide">
-              <input
-                type="text"
-                className="budget"
-                placeholder="Max budget ex. 500"
-              ></input>
-              <span>$</span>
-            </div>
-          </div>
-        </form>
-        <div className="tour__addvanced__search">
-          <a className="icon_down">Advanced Search</a>
+    <div className="form">
+      <form id="tour__search">
+        <div className="form__show">
+          <input
+            className="form__search"
+            type="text"
+            placeholder="Destination, city "
+          ></input>
+          <span className="icon__search">
+            <AiOutlineSearch />
+          </span>
         </div>
+        <div className="form__show">
+          <select className="month">
+            <option value="">Any Month</option>
+            {month.map((item, monthKey) => (
+              <option key={monthKey} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+          <span className="icon__calendar">
+            <AiTwotoneCalendar />
+          </span>
+        </div>
+        <div className="form__show">
+          <select className="sort__by">
+            <option value="">Sort By Date</option>
+            {sort.map((item, sortKey) => (
+              <option key={sortKey} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+          <span className="icon__exchange">
+            <TfiExchangeVertical />
+          </span>
+        </div>
+        <div className="form__show">
+          <input value="Search" className="button" type="submit"></input>
+        </div>
+      </form>
+      <form id="tour__advanced">
+        <div className="form__hide_advanced">
+          <div className="form__hide">
+            <select className="list__categories">
+              <option value="">Any Categories</option>
+              {categories.map((item, cateKey) => (
+                <option key={cateKey} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+            <span className="icon__arrowDown">
+              <AiOutlineDown />
+            </span>
+          </div>
+          <div className="form__hide">
+            <select className="destinations">
+              <option value="">Any Destination</option>
+              {destination.map((item, desKey) => (
+                <option key={desKey} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+            <span className="icon__arrowDown">
+              <AiOutlineDown />
+            </span>
+          </div>
+          <div className="form__hide">
+            <input
+              type="text"
+              className="budget"
+              placeholder="Max budget ex. 500"
+            ></input>
+            <span>$</span>
+          </div>
+        </div>
+      </form>
+      <div className="tour__addvanced__search">
+        <a className="icon_down">Advanced Search</a>
       </div>
-    </section>
+    </div>
   );
 }

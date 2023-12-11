@@ -51,14 +51,12 @@ const HomePage = () => {
       });
   }, []);
   return (
-    <section>
-      <div className="homepage">
-        <Destinations data={destination} />
-        <BestTrips data={bestTrips} />
-        <Choose data={choose} />
-        <Articles data={articles} />
-      </div>
-    </section>
+    <div className="homepage">
+      <Destinations data={destination} />
+      <BestTrips data={bestTrips} />
+      <Choose data={choose} />
+      <Articles data={articles} />
+    </div>
   );
 };
 export default HomePage;

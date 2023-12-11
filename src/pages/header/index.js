@@ -20,20 +20,18 @@ const Header = () => {
   }, []);
 
   return (
-    <section>
-      <div className="header">
-        <div className="header__banner">
-          <img src={banner.data?.imageUrl ?? images.banner} alt="Banner"></img>
-        </div>
-        <div className="container__header">
-          <div className="title">
-            <h1>{banner.data?.title}</h1>
-            <h3>{banner.data?.description}</h3>
-          </div>
-          <SearchForm />
-        </div>
+    <div className="header">
+      <div className="header__banner">
+        <img src={banner.data?.imageUrl ?? images.banner} alt="Banner"></img>
       </div>
-    </section>
+      <div className="container__header">
+        <div className="title">
+          <h1>{banner.data?.title}</h1>
+          <h3>{banner.data?.description}</h3>
+        </div>
+        <SearchForm />
+      </div>
+    </div>
   );
 };
 
