@@ -363,10 +363,19 @@
         @include Responsive($WIDE_DEVICE) {
           width: 100%;
           &:nth-child(2){
-            margin-top: 50px;
+            margin-top: 60px;
           }
           &:nth-child(3){
-            margin-top: 50px;
+            margin-top: 60px;
+          }
+        }
+        @include Responsive($SMALL_DEVICE) {
+          width: 100%;
+          &:nth-child(2){
+            margin-top: 70px;
+          }
+          &:nth-child(3){
+            margin-top: 70px;
           }
         }
       }
@@ -499,6 +508,9 @@
     @include Responsive($WIDE_DEVICE){
       padding:  0 20px;
       margin-top: 40px;
+    }
+    @include Responsive($SMALL_DEVICE){
+      margin-bottom: 40px;
     }
   }
 }

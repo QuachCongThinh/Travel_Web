@@ -12,8 +12,8 @@
     list-style: none;
 
     .widget-1 {
-      max-width: 100%;
-      width: 400px;
+      width: 100%;
+      max-width: 400px;
       list-style: none;
       margin-top: 60px;
       .widget_title {
@@ -31,11 +31,33 @@
         img {
           max-width: 65%;
           margin-top: 20px;
+          @include Responsive($MEDIUM_DEVICE) {
+            max-width: 80%;
+          }
+          @include Responsive($TABLE_DEVICE) {
+            max-width: 90%;
+          }
+          @include Responsive($WIDE_DEVICE) {
+            max-width: 70%;
+          }
         }
+      }
+      @include Responsive($MEDIUM_DEVICE) {
+        padding: 0 25px;
+      }
+      @include Responsive($TABLE_DEVICE) {
+        padding: 0 25px;
+        width: 250px;
+      }
+      @include Responsive($WIDE_DEVICE) {
+        padding: 0 25px;
+      }
+      @include Responsive($SMALL_DEVICE) {
+        padding: 0 25px;
+        width: 330px;
       }
     }
     .widget-2 {
-      max-width: 100%;
       width: 400px;
       margin-top: 60px;
       margin-left: 40px;
@@ -110,6 +132,9 @@
               padding: 10px;
             }
           }
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
+          }
         }
         .youtube {
           font-size: 25px;
@@ -123,6 +148,9 @@
               height: 40px;
               padding: 10px;
             }
+          }
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
           }
         }
         .pinterest {
@@ -138,6 +166,9 @@
               padding: 10px;
             }
           }
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
+          }
         }
         .instagram {
           font-size: 25px;
@@ -152,7 +183,40 @@
               padding: 10px;
             }
           }
+          @include Responsive($TABLE_DEVICE) {
+            margin-left: 0;
+          }
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
+          }
         }
+        @include Responsive($TABLE_DEVICE) {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        @include Responsive($WIDE_DEVICE) {
+          margin-left: 60px;
+        }
+        @include Responsive($SMALL_DEVICE) {
+          margin-left: 40px;
+        }
+      }
+      @include Responsive($MEDIUM_DEVICE) {
+        max-width: 400px;
+        width: 100%;
+        margin-left: 0;
+        padding: 0 25px 0 0;
+      }
+      @include Responsive($TABLE_DEVICE) {
+        max-width: 230px;
+        width: 100%;
+        margin-left: 0;
+        padding: 0 25px 0 0;
+      }
+      @include Responsive($WIDE_DEVICE) {
+        margin-left: 0;
+        margin-top: 30px;
+        padding: 0 0 0 25px;
       }
     }
     .widget-3 {
@@ -167,32 +231,65 @@
       .flick {
         margin-top: 20px;
         list-style: none;
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 8px;
         li {
           img {
-            width: 130px;
-            height: 130px;
+            max-width: 130px;
+            height: auto;
             border-radius: 5px;
+            @include Responsive($MEDIUM_DEVICE) {
+              width: 100%;
+            }
+            @include Responsive($TABLE_DEVICE) {
+              width: 100%;
+            }
+            @include Responsive($WIDE_DEVICE) {
+              width: 100%;
+            }
           }
         }
       }
+      @include Responsive($MEDIUM_DEVICE) {
+        width: 340px;
+        padding: 0 20px;
+      }
+      @include Responsive($TABLE_DEVICE) {
+        width: 270px;
+        padding: 0 20px;
+      }
+      @include Responsive($WIDE_DEVICE) {
+        width: 406px;
+        padding: 0 25px;
+      }
+      @include Responsive($SMALL_DEVICE) {
+        width: 360px;
+        padding: 0 25px;
+      }
+    }
+    @include Responsive($WIDE_DEVICE) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
   .footer__bar {
     border-top: 1px solid #2e2e2e;
     width: 1250px;
     margin: auto;
-    padding-bottom: 5px;
+    padding-bottom: 1px;
     .footer__content {
       margin-top: 30px;
       margin-bottom: 30px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 50% 50%;
       .copyright {
-        width: 100%;
         font-size: 12px;
         font-weight: 300;
+        @include Responsive($WIDE_DEVICE) {
+          order: 2;
+          margin-top: 10px;
+        }
       }
       .menu__footer {
         cursor: pointer;
@@ -208,7 +305,6 @@
             padding: 0 0 0 10px;
           }
         }
-
         .button__toTop {
           background: #1ec6b6;
           width: 45px;
@@ -220,13 +316,41 @@
           position: absolute;
           right: 0;
           margin-right: 15px;
-          margin-top: -5px;
+          margin-top: -50px;
           transition: all 0.1s;
           &:hover {
             transform: translateY(-5px);
           }
         }
+        @include Responsive($WIDE_DEVICE) {
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+        }
       }
+      @include Responsive($TABLE_DEVICE) {
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 60% 40%;
+      }
+      @include Responsive($WIDE_DEVICE) {
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding: 0 25px;
+      }
+    }
+    @include Responsive($MEDIUM_DEVICE) {
+      max-width: 1250px;
+      width: 100%;
+      padding: 0 25px 1px 25px;
+    }
+    @include Responsive($TABLE_DEVICE) {
+      max-width: 1250px;
+      width: 100%;
+    }
+    @include Responsive($WIDE_DEVICE) {
+      max-width: 1250px;
+      width: 100%;
     }
   }
 }

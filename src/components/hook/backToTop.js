@@ -7,8 +7,6 @@ const ButtonContainer = styled.span`
   bottom: 20px;
   right: -5px;
   align-items: center;
-  height: 32px;
-  width: 32px;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;

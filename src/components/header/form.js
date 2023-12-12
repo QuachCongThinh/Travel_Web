@@ -52,26 +52,32 @@ export function SearchForm() {
     const toggle = document.querySelector(
       ".container__header .form .tour__addvanced__search .icon_down"
     );
+    const tourSearch = document.querySelector(
+      ".container__header .form #tour__search"
+    );
+    const title = document.querySelector(".container__header #title")
     toggle.onclick = function () {
       formHide.classList.toggle("show");
       toggle.classList.toggle("icon_up");
+      tourSearch.classList.toggle("top");
+      title.classList.toggle("titleTop");
     };
   });
 
   return (
     <div className="form">
       <form id="tour__search">
-        <div className="form__show">
+        <div className="form__text">
           <input
-            className="form__search"
+            className="search"
             type="text"
             placeholder="Destination, city "
           ></input>
-          <span className="icon__search">
+          <span>
             <AiOutlineSearch />
           </span>
         </div>
-        <div className="form__show">
+        <div className="form__month">
           <select className="month">
             <option value="">Any Month</option>
             {month.map((item, monthKey) => (
@@ -80,11 +86,11 @@ export function SearchForm() {
               </option>
             ))}
           </select>
-          <span className="icon__calendar">
+          <span>
             <AiTwotoneCalendar />
           </span>
         </div>
-        <div className="form__show">
+        <div className="form__sort">
           <select className="sort__by">
             <option value="">Sort By Date</option>
             {sort.map((item, sortKey) => (
@@ -93,17 +99,17 @@ export function SearchForm() {
               </option>
             ))}
           </select>
-          <span className="icon__exchange">
+          <span>
             <TfiExchangeVertical />
           </span>
         </div>
-        <div className="form__show">
+        <div className="form__search">
           <input value="Search" className="button" type="submit"></input>
         </div>
       </form>
       <form id="tour__advanced">
         <div className="form__hide_advanced">
-          <div className="form__hide">
+          <div className="form__categories">
             <select className="list__categories">
               <option value="">Any Categories</option>
               {categories.map((item, cateKey) => (
@@ -112,11 +118,11 @@ export function SearchForm() {
                 </option>
               ))}
             </select>
-            <span className="icon__arrowDown">
+            <span>
               <AiOutlineDown />
             </span>
           </div>
-          <div className="form__hide">
+          <div className="form__destinations">
             <select className="destinations">
               <option value="">Any Destination</option>
               {destination.map((item, desKey) => (
@@ -125,11 +131,11 @@ export function SearchForm() {
                 </option>
               ))}
             </select>
-            <span className="icon__arrowDown">
+            <span>
               <AiOutlineDown />
             </span>
           </div>
-          <div className="form__hide">
+          <div className="form__budget">
             <input
               type="text"
               className="budget"

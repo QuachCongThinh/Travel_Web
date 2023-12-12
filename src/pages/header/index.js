@@ -25,7 +25,7 @@ const Header = () => {
         <img src={banner.data?.imageUrl ?? images.banner} alt="Banner"></img>
       </div>
       <div className="container__header">
-        <div className="title">
+        <div id="title">
           <h1>{banner.data?.title}</h1>
           <h3>{banner.data?.description}</h3>
         </div>

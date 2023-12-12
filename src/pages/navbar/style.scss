@@ -268,6 +268,9 @@
       @include Responsive($MEDIUM_DEVICE) {
         margin-left: 55px;
       }
+      @include Responsive($TABLE_DEVICE) {
+        margin-left: 60px;
+      }
       @include Responsive($WIDE_DEVICE){
         margin-left: 30px;
         margin-top: 20px;
@@ -312,6 +315,9 @@
         @include Responsive($MEDIUM_DEVICE) {
           padding: 0 16px 0 10px;
         }
+        @include Responsive($TABLE_DEVICE) {
+          display: none;
+        }
       }
       li:hover .header__menuFixed__dropdown {
         opacity: 1;
@@ -340,6 +346,7 @@
       padding: 2px 8px;
 
       li {
+        padding: 0 10px 0 10px;
         .link__menuFixed {
           text-decoration: none;
           color: #000;
@@ -456,13 +463,21 @@
           top: 5px;
           left: 37px;
           line-height: 16px;
+          @include Responsive($TABLE_DEVICE){
+            margin-left: 10px;
+          }
           @include Responsive($WIDE_DEVICE){
             margin-left: 10px;
           }
         }
+        @include Responsive($TABLE_DEVICE){
+          margin-left: 10px;
+        }
         @include Responsive($WIDE_DEVICE){
           margin-left: 10px;
         }
+      }
+      @include Responsive($TABLE_DEVICE){
       }
       @include Responsive($WIDE_DEVICE){
         margin-right: 25px;
@@ -479,7 +494,8 @@
       margin-left: 32px;
     }
     @include Responsive($TABLE_DEVICE){
-      display: none;
+      margin-left: 465px;
+
     }
     @include Responsive($WIDE_DEVICE){
       margin-left: 190px;

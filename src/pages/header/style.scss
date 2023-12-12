@@ -12,7 +12,7 @@
       margin-top: -140px;
       z-index: -1;
       object-fit: cover;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
         height: 565px;
       }
     }
@@ -25,75 +25,99 @@
       z-index: 1;
       background: #000;
       opacity: 0.3;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
         height: 565px;
       }
     }
   }
+}
+
+.titleTop {
+  margin-top: 180px !important ;
 }
 .container__header {
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 3;
-  .title {
+  #title {
     margin-top: 207px;
+    text-align: center;
     h1 {
       font-size: 36px;
       color: #fff;
-      text-align: center;
       line-height: 49px;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
         font-size: 24px !important;
       }
     }
     h3 {
       color: #cccccc;
-      text-align: center;
       font-size: 15px;
       font-weight: 500;
     }
-    @include Responsive($WIDE_DEVICE){
+    @include Responsive($WIDE_DEVICE) {
       margin-top: 5px !important;
-      line-height: 6px;
+      line-height: 16px;
     }
   }
 
+  .top {
+    margin-top: -5px !important ;
+  }
   .form {
     max-width: 100%;
     width: 1212px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 24px;
     #tour__search {
-      display: flex;
-      max-width: 100%;
-      .form__show {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      .form__text {
+        position: relative;
+        .search {
+          width: 100%;
+          max-width: 285px;
+          padding: 8px 15px;
+          border-radius: 5px;
+          border: none;
+          height: 40px;
+          font-size: 14px;
+          font-weight: 300;
+          margin-right: 22px;
+          box-sizing: border-box;
+          outline: none;
+          @include Responsive($WIDE_DEVICE) {
+            max-width: 420px;
+          }
+        }
         svg {
           position: absolute;
-          margin-top: 10px;
-          margin-left: -52px;
           font-size: 18px;
+          right: 0;
+          margin-right: 30px;
+          margin-top: 10px;
           color: #7a7a7a;
+          top: 0;
+          @include Responsive($MEDIUM_DEVICE) {
+            margin-right: 10px;
+          }
+          @include Responsive($TABLE_DEVICE) {
+            margin-right: 10px;
+            background: #fff;
+            width: 20px;
+          }
+          @include Responsive($WIDE_DEVICE) {
+            margin-right: 10px;
+          }
         }
-        .form__search {
-          max-width: 100%;
-          position: relative;
-          width: 285px;
-          padding: 8px 15px;
-          border-radius: 5px;
-          border: none;
-          height: 40px;
-          font-size: 14px;
-          font-weight: 300;
-          margin-right: 22px;
-          box-sizing: border-box;
-          outline: none;
-        }
+      }
+      .form__month {
+        position: relative;
         .month {
           outline: none;
-          position: relative;
-          max-width: 100%;
-          width: 285px;
+          width: 100%;
+          max-width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
           height: 40px;
@@ -107,12 +131,37 @@
           text-indent: 1px;
           text-overflow: "";
           border: 1px solid #dce0e0;
+          @include Responsive($WIDE_DEVICE) {
+            max-width: 420px;
+          }
         }
+        svg {
+          position: absolute;
+          font-size: 18px;
+          right: 0;
+          margin-right: 30px;
+          margin-top: 10px;
+          color: #7a7a7a;
+          top: 0;
+          @include Responsive($MEDIUM_DEVICE) {
+            margin-right: 10px;
+          }
+          @include Responsive($TABLE_DEVICE) {
+            margin-right: 10px;
+            background: #fff;
+            width: 20px;
+          }
+          @include Responsive($WIDE_DEVICE) {
+            margin-right: 10px;
+          }
+        }
+      }
+      .form__sort {
+        position: relative;
         .sort__by {
           outline: none;
-          position: relative;
-          width: 285px;
-          max-width: 100%;
+          width: 100%;
+          max-width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
           border: none;
@@ -127,12 +176,37 @@
           text-indent: 1px;
           text-overflow: "";
           border: 1px solid #dce0e0;
+          @include Responsive($WIDE_DEVICE) {
+            max-width: 420px;
+          }
         }
+        svg {
+          position: absolute;
+          font-size: 18px;
+          right: 0;
+          margin-right: 30px;
+          margin-top: 10px;
+          color: #7a7a7a;
+          top: 0;
+          @include Responsive($MEDIUM_DEVICE) {
+            margin-right: 10px;
+          }
+          @include Responsive($TABLE_DEVICE) {
+            margin-right: 10px;
+            background: #fff;
+            width: 20px;
+          }
+          @include Responsive($WIDE_DEVICE) {
+            margin-right: 10px;
+          }
+        }
+      }
+      .form__search {
+        position: relative;
         .button {
           cursor: pointer;
-          position: relative;
-          width: 285px;
-          max-width: 100%;
+          width: 100%;
+          max-width: 285px;
           padding: 8px 15px;
           border-radius: 5px;
           max-width: 100%;
@@ -146,113 +220,227 @@
           &:hover {
             background: #1ec6b6;
           }
+          @include Responsive($WIDE_DEVICE) {
+            max-width: 420px;
+          }
+        }
+        svg {
+          position: absolute;
+          font-size: 18px;
+          right: 0;
+          margin-right: 30px;
+          margin-top: 10px;
+          color: #7a7a7a;
+          top: 0;
         }
       }
+      @include Responsive($MEDIUM_DEVICE) {
+        gap: 20px;
+      }
+      @include Responsive($TABLE_DEVICE) {
+        gap: 20px;
+      }
+      @include Responsive($WIDE_DEVICE) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 40px;
+        row-gap: 8px;
+        column-gap: 10px;
+        max-width: 600px;
+      }
     }
+
     .show {
       display: block !important;
     }
     #tour__advanced {
       display: none;
       .form__hide_advanced {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         margin-top: 23px;
-      }
-      svg {
-        position: absolute;
-        margin-top: 6px;
-        margin-left: -5px;
-        color: #7a7a7a;
-      }
-      .form__hide {
-        span {
-          font-size: 15px;
-          position: absolute;
-          color: #7a7a7a;
-          margin-top: 7px;
-          margin-left: -45px;
-        }
-        .list__categories {
-          outline: none;
+        .form__categories {
           position: relative;
-          max-width: 100%;
-          width: 285px;
-          padding: 8px 10px;
-          border-radius: 5px;
-          border: none;
-          height: 40px;
-          color: #4d4d4d;
-          font-size: 14px;
-          font-weight: 300;
-          margin-right: 22px;
-          box-sizing: border-box;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          text-indent: 1px;
-          text-overflow: "";
-          border: 1px solid #dce0e0;
+          .list__categories {
+            outline: none;
+            width: 100%;
+            max-width: 285px;
+            padding: 8px 10px;
+            border-radius: 5px;
+            border: none;
+            height: 40px;
+            color: #4d4d4d;
+            font-size: 14px;
+            font-weight: 300;
+            margin-right: 22px;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: "";
+            border: 1px solid #dce0e0;
+            @include Responsive($WIDE_DEVICE) {
+              max-width: 420px;
+            }
+          }
+          span {
+            font-size: 17px;
+            position: absolute;
+            color: #7a7a7a;
+            top: 0;
+            right: 0;
+            margin-top: 10px;
+            margin-right: 30px;
+            @include Responsive($MEDIUM_DEVICE) {
+              margin-right: 10px;
+            }
+            @include Responsive($TABLE_DEVICE) {
+              margin-right: 10px;
+              background: #fff;
+              width: 20px;
+            }
+            @include Responsive($WIDE_DEVICE) {
+              margin-right: 10px;
+            }
+          }
         }
-        .destinations {
-          outline: none;
+        .form__destinations {
           position: relative;
-          width: 285px;
-          padding: 8px 10px;
-          max-width: 100%;
-          border-radius: 5px;
-          font-size: 14px;
-          font-weight: 300;
-          border: none;
-          height: 40px;
-          color: #4d4d4d;
-          margin-right: 22px;
-          box-sizing: border-box;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          text-indent: 1px;
-          border: 1px solid #dce0e0;
-          text-overflow: "";
+          .destinations {
+            outline: none;
+            width: 100%;
+            max-width: 285px;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 300;
+            border: none;
+            height: 40px;
+            color: #4d4d4d;
+            margin-right: 22px;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            border: 1px solid #dce0e0;
+            text-overflow: "";
+            @include Responsive($WIDE_DEVICE) {
+              max-width: 420px;
+            }
+          }
+          span {
+            font-size: 17px;
+            position: absolute;
+            color: #7a7a7a;
+            top: 0;
+            right: 0;
+            margin-top: 10px;
+            margin-right: 30px;
+            @include Responsive($MEDIUM_DEVICE) {
+              margin-right: 10px;
+            }
+            @include Responsive($TABLE_DEVICE) {
+              margin-right: 10px;
+              background: #fff;
+              width: 20px;
+            }
+            @include Responsive($WIDE_DEVICE) {
+              margin-right: 10px;
+            }
+          }
         }
-        .budget {
-          outline: none;
+        .form__budget {
           position: relative;
-          width: 285px;
-          padding: 8px 10px;
-          border-radius: 5px;
-          border: none;
-          max-width: 100%;
-          font-size: 14px;
-          font-weight: 300;
-          height: 40px;
-          color: #707070;
-          margin-right: 22px;
-          box-sizing: border-box;
-          border: 1px solid #dce0e0;
-          outline: none;
+          .budget {
+            outline: none;
+            width: 100%;
+            max-width: 285px;
+            padding: 8px 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 14px;
+            font-weight: 300;
+            height: 40px;
+            color: #707070;
+            margin-right: 22px;
+            box-sizing: border-box;
+            border: 1px solid #dce0e0;
+            outline: none;
+            @include Responsive($WIDE_DEVICE) {
+              max-width: 420px;
+            }
+          }
+          span {
+            font-size: 17px;
+            position: absolute;
+            color: #7a7a7a;
+            top: 0;
+            right: 0;
+            margin-top: 7px;
+            margin-right: 33px;
+            @include Responsive($MEDIUM_DEVICE) {
+              margin-right: 10px;
+            }
+            @include Responsive($TABLE_DEVICE) {
+              margin-right: 10px;
+              background: #fff;
+              width: 20px;
+            }
+            @include Responsive($WIDE_DEVICE) {
+              margin-right: 10px;
+            }
+          }
+        }
+        @include Responsive($MEDIUM_DEVICE) {
+          gap: 20px;
+        }
+        @include Responsive($TABLE_DEVICE) {
+          gap: 20px;
+        }
+        @include Responsive($WIDE_DEVICE) {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          padding: 0 40px;
+          row-gap: 8px;
+          column-gap: 10px;
+          max-width: 600px;
+          margin-top: 8px;
         }
       }
     }
-    .icon_up {
-      &::before {
-        font-family: "FontAwesome";
-        content: "\f106" !important;
-      }
+  }
+  @include Responsive($TABLE_DEVICE) {
+    padding: 0 50px;
+  }
+  @include Responsive($MEDIUM_DEVICE) {
+    padding: 0 65px;
+  }
+}
+
+.icon_up {
+  &::before {
+    font-family: "FontAwesome";
+    content: "\f106" !important;
+  }
+}
+.tour__addvanced__search {
+  margin-top: 10px;
+  .icon_down {
+    &::before {
+      font-family: "FontAwesome";
+      content: "\f107";
+      margin-right: 5px;
+      vertical-align: middle;
+      font-size: 20px;
     }
-    .tour__addvanced__search {
-      margin-top: 10px;
-      .icon_down {
-        &::before {
-          font-family: "FontAwesome";
-          content: "\f107";
-          margin-right: 5px;
-          vertical-align: middle;
-          font-size: 20px;
-        }
-        cursor: pointer;
-        color: #fff;
-        font-size: 13px;
-        text-decoration: none;
-        font-weight: 300;
-      }
-    }
+    cursor: pointer;
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  @include Responsive($WIDE_DEVICE) {
+    margin-left: 40px;
+    margin-top: 0;
   }
 }
