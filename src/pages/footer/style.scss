@@ -40,6 +40,9 @@
           @include Responsive($WIDE_DEVICE) {
             max-width: 70%;
           }
+          @include Responsive($SMALL_DEVICE) {
+            max-width: 90%;
+          }
         }
       }
       @include Responsive($MEDIUM_DEVICE) {
@@ -51,6 +54,7 @@
       }
       @include Responsive($WIDE_DEVICE) {
         padding: 0 25px;
+        width: 370px;
       }
       @include Responsive($SMALL_DEVICE) {
         padding: 0 25px;
@@ -135,6 +139,9 @@
           @include Responsive($WIDE_DEVICE) {
             margin-left: 10px;
           }
+          @include Responsive($SMALL_DEVICE) {
+            margin-left: 10px;
+          }
         }
         .youtube {
           font-size: 25px;
@@ -152,6 +159,9 @@
           @include Responsive($WIDE_DEVICE) {
             margin-left: 10px;
           }
+          @include Responsive($SMALL_DEVICE) {
+            margin-left: 10px;
+          }
         }
         .pinterest {
           font-size: 25px;
@@ -167,6 +177,9 @@
             }
           }
           @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
+          }
+          @include Responsive($SMALL_DEVICE) {
             margin-left: 10px;
           }
         }
@@ -187,6 +200,9 @@
             margin-left: 0;
           }
           @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
+          }
+          @include Responsive($SMALL_DEVICE) {
             margin-left: 10px;
           }
         }
@@ -214,6 +230,11 @@
         padding: 0 25px 0 0;
       }
       @include Responsive($WIDE_DEVICE) {
+        margin-left: 0;
+        margin-top: 30px;
+        padding: 0 0 0 25px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         margin-left: 0;
         margin-top: 30px;
         padding: 0 0 0 25px;
@@ -247,6 +268,8 @@
             }
             @include Responsive($WIDE_DEVICE) {
               width: 100%;
+            } @include Responsive($SMALL_DEVICE) {
+              width: 100%;
             }
           }
         }
@@ -272,6 +295,10 @@
       display: grid;
       grid-template-columns: repeat(1, 1fr);
     }
+    @include Responsive($SMALL_DEVICE) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   .footer__bar {
     border-top: 1px solid #2e2e2e;
@@ -287,6 +314,9 @@
         font-size: 12px;
         font-weight: 300;
         @include Responsive($WIDE_DEVICE) {
+          order: 2;
+          margin-top: 10px;
+        }@include Responsive($SMALL_DEVICE) {
           order: 2;
           margin-top: 10px;
         }
@@ -324,7 +354,10 @@
         }
         @include Responsive($WIDE_DEVICE) {
           display: grid;
-          grid-template-columns: repeat(1,1fr);
+          grid-template-columns: repeat(1, 1fr);
+        }@include Responsive($SMALL_DEVICE) {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
         }
       }
       @include Responsive($TABLE_DEVICE) {
@@ -335,7 +368,12 @@
       @include Responsive($WIDE_DEVICE) {
         margin-bottom: 20px;
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 25px;
+      }@include Responsive($SMALL_DEVICE) {
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         padding: 0 25px;
       }
     }
@@ -349,6 +387,9 @@
       width: 100%;
     }
     @include Responsive($WIDE_DEVICE) {
+      max-width: 1250px;
+      width: 100%;
+    }@include Responsive($SMALL_DEVICE) {
       max-width: 1250px;
       width: 100%;
     }

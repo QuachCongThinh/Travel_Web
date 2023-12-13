@@ -1,7 +1,6 @@
 import "../../pages/menubar/style.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { dblClick } from "@testing-library/user-event/dist/click";
 
 export function MenuBar() {
   const [menus] = useState([
@@ -411,56 +410,49 @@ export function MenuBar() {
     },
   ]);
 
-  // const ClickOpenMenu = () => {
-  //   let submenu = document.querySelector("#main__menubar .header__menu__dropdown")
-  //   if(submenu.style.display === "none"){
-  //     submenu.style.display = "block";
-  //   }
-  //   else{
-  //     submenu.style.display = "none";
-  //   }
-  // };
+  window.onload = function () {
+    const menu = document.querySelectorAll("#menubar__menu ul li a");
+    console.log(menu);
+  };
 
   return (
-    <>
-      <div className="menubar__menu">
-        <ul>
-          {menus.map((menu, menuKey) => (
-            <li key={menuKey} className="menu__parent">
-              <Link to={menu.path} className="menu" >
-                {menu.name}
-              </Link>
-              {menu.child && (
-                <ul className="header__menu__dropdown">
-                  {menu.child.map((childItem, childKey) => (
-                    <li key={`${menuKey}-${childKey}`}>
-                      <Link
-                        className={`${
-                          childItem.submenu ? "link__menu" : "link_menu"
-                        }`}
-                        to={childItem.path}
-                      >
-                        {childItem.name}
-                      </Link>
-                      {childItem.submenu && (
-                        <ul className="header__menu__horizontal">
-                          {childItem.submenu?.map((submenuItem, submenuKey) => (
-                            <li key={`${menuKey}-${submenuKey}`}>
-                              <Link to={submenuItem.path}>
-                                {submenuItem.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <div id="menubar__menu">
+      <ul>
+        {menus.map((menu, menuKey) => (
+          <li key={menuKey}>
+            <Link to={menu.path} className="menu">
+              {menu.name}
+            </Link>
+            {menu.child && (
+              <ul className="header__menu__dropdown">
+                {menu.child.map((childItem, childKey) => (
+                  <li key={`${menuKey}-${childKey}`}>
+                    <Link
+                      className={`${
+                        childItem.submenu ? "link__menu" : "link_menu"
+                      }`}
+                      to={childItem.path}
+                    >
+                      {childItem.name}
+                    </Link>
+                    {childItem.submenu && (
+                      <ul className="header__menu__horizontal">
+                        {childItem.submenu?.map((submenuItem, submenuKey) => (
+                          <li key={`${menuKey}-${submenuKey}`}>
+                            <Link to={submenuItem.path}>
+                              {submenuItem.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

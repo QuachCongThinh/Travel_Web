@@ -12,7 +12,10 @@
       display: inline-block;
       font-size: 36px;
       font-weight: 700;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        font-size: 24px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         font-size: 24px;
       }
     }
@@ -21,7 +24,10 @@
       font-weight: 500;
       color: $title-color;
     }
-    @include Responsive($WIDE_DEVICE){
+    @include Responsive($WIDE_DEVICE) {
+      margin-top: 31px;
+    }
+    @include Responsive($SMALL_DEVICE) {
       margin-top: 31px;
     }
   }
@@ -76,13 +82,20 @@
         }
         &:nth-child(2) {
           margin-left: 30px;
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 0;
+          }
+          @include Responsive($SMALL_DEVICE) {
             margin-left: 0;
           }
         }
         &:nth-child(3) {
           margin: 0 30px;
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 0;
+            margin-bottom: 25px;
+          }
+          @include Responsive($SMALL_DEVICE) {
             margin-left: 0;
             margin-bottom: 25px;
           }
@@ -92,11 +105,21 @@
           transform: translateY(-5px);
           border-radius: 5px;
         }
-        @include Responsive($WIDE_DEVICE){
+        @include Responsive($WIDE_DEVICE) {
+          margin-bottom: 25px;
+        }
+        @include Responsive($SMALL_DEVICE) {
           margin-bottom: 25px;
         }
       }
       @include Responsive($WIDE_DEVICE) {
+        display: grid;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin: 30px 0;
+      }
+      @include Responsive($SMALL_DEVICE) {
         display: grid;
         flex-direction: column;
         width: 100%;
@@ -110,7 +133,10 @@
     @include Responsive($TABLE_DEVICE) {
       padding: 0 30px;
     }
-    @include Responsive($WIDE_DEVICE){
+    @include Responsive($WIDE_DEVICE) {
+      padding: 0 20px;
+    }
+    @include Responsive($SMALL_DEVICE) {
       padding: 0 20px;
     }
   }
@@ -123,7 +149,10 @@
     h2 {
       font-size: 36px;
       font-weight: 700;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        font-size: 24px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         font-size: 24px;
       }
     }
@@ -132,7 +161,10 @@
       font-weight: 500;
       color: #8d9199;
     }
-    @include Responsive($WIDE_DEVICE){
+    @include Responsive($WIDE_DEVICE) {
+      margin-top: 45px;
+    }
+    @include Responsive($SMALL_DEVICE) {
       margin-top: 45px;
     }
   }
@@ -150,8 +182,11 @@
           @include Responsive($WIDE_DEVICE) {
             margin: 0;
           }
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
             margin-bottom: 25px;
+          }
+          @include Responsive($SMALL_DEVICE) {
+            margin: 0 0 25px 0;
           }
         }
         &:nth-child(3) .sale {
@@ -288,14 +323,21 @@
           box-shadow: 0 20px 40px 4px rgba(0, 0, 0, 0.1);
           transform: translateY(-5px);
         }
-        @include Responsive($WIDE_DEVICE){
+        @include Responsive($WIDE_DEVICE) {
+          margin-bottom: 25px;
+        }
+        @include Responsive($SMALL_DEVICE) {
           margin-bottom: 25px;
         }
       }
       @include Responsive($TABLE_DEVICE) {
         height: 340px;
       }
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        display: grid;
+        flex-direction: column;
+      }
+      @include Responsive($SMALL_DEVICE) {
         display: grid;
         flex-direction: column;
       }
@@ -309,6 +351,9 @@
     @include Responsive($WIDE_DEVICE) {
       padding: 0 20px;
     }
+    @include Responsive($SMALL_DEVICE) {
+      padding: 0 20px;
+    }
   }
 }
 .choose {
@@ -319,7 +364,10 @@
     h2 {
       font-size: 36px;
       font-weight: 700;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        font-size: 24px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         font-size: 24px;
       }
     }
@@ -327,10 +375,13 @@
       font-size: 15px;
       font-weight: 500;
       color: #8d9199;
-      
     }
-    @include Responsive($WIDE_DEVICE){
+    @include Responsive($WIDE_DEVICE) {
       margin-top: 0;
+    }
+    @include Responsive($SMALL_DEVICE) {
+      margin-top: 0;
+      padding: 0 30px;
     }
   }
   .choose__details {
@@ -356,30 +407,36 @@
           font-weight: 400;
           margin-top: 10px;
           color: #444;
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
+            padding: 0 35px;
+          }
+          @include Responsive($SMALL_DEVICE) {
             padding: 0 35px;
           }
         }
         @include Responsive($WIDE_DEVICE) {
           width: 100%;
-          &:nth-child(2){
+          &:nth-child(2) {
             margin-top: 60px;
           }
-          &:nth-child(3){
+          &:nth-child(3) {
             margin-top: 60px;
           }
         }
         @include Responsive($SMALL_DEVICE) {
           width: 100%;
-          &:nth-child(2){
+          &:nth-child(2) {
             margin-top: 70px;
           }
-          &:nth-child(3){
+          &:nth-child(3) {
             margin-top: 70px;
           }
         }
       }
       @include Responsive($WIDE_DEVICE) {
+        flex-direction: column;
+      }
+      @include Responsive($SMALL_DEVICE) {
         flex-direction: column;
       }
     }
@@ -389,7 +446,10 @@
     @include Responsive($TABLE_DEVICE) {
       padding: 0 30px;
     }
-    @include Responsive($WIDE_DEVICE){
+    @include Responsive($WIDE_DEVICE) {
+      margin-top: 60px;
+    }
+    @include Responsive($SMALL_DEVICE) {
       margin-top: 60px;
     }
   }
@@ -411,7 +471,10 @@
     h2 {
       font-size: 36px;
       font-weight: 700;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        font-size: 24px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         font-size: 24px;
       }
     }
@@ -419,7 +482,10 @@
       font-size: 15px;
       font-weight: 500;
       color: #8d9199;
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        padding: 0 10px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         padding: 0 10px;
       }
     }
@@ -436,12 +502,15 @@
           @include Responsive($TABLE_DEVICE) {
             margin: 0 20px;
           }
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
             margin: 0;
           }
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
             margin-bottom: 25px;
-           }
+          }
+          @include Responsive($SMALL_DEVICE) {
+            margin: 0 0 25px 0;
+          }
         }
         cursor: pointer;
         transition: all 0.3s;
@@ -490,11 +559,18 @@
             }
           }
         }
-       @include Responsive($WIDE_DEVICE){
-        margin-bottom: 25px;
-       }
+        @include Responsive($WIDE_DEVICE) {
+          margin-bottom: 25px;
+        }
+        @include Responsive($SMALL_DEVICE) {
+          margin-bottom: 25px;
+        }
       }
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        display: grid;
+        flex-direction: column;
+      }
+      @include Responsive($SMALL_DEVICE) {
         display: grid;
         flex-direction: column;
       }
@@ -505,12 +581,13 @@
     @include Responsive($TABLE_DEVICE) {
       padding: 0 30px;
     }
-    @include Responsive($WIDE_DEVICE){
-      padding:  0 20px;
+    @include Responsive($WIDE_DEVICE) {
+      padding: 0 20px;
       margin-top: 40px;
     }
-    @include Responsive($SMALL_DEVICE){
+    @include Responsive($SMALL_DEVICE) {
       margin-bottom: 40px;
+      padding: 0 20px;
     }
   }
 }

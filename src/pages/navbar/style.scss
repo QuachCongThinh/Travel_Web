@@ -24,7 +24,11 @@
       @include Responsive($TABLE_DEVICE) {
         margin-left: 60px;
       }
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         margin-left: 30px;
         margin-top: 20px;
       }
@@ -38,7 +42,7 @@
     align-items: center;
     justify-content: flex-end;
     margin-top: 10px;
-    margin-right: 2px;
+    margin-right: 12px;
     ul {
       display: flex;
       li {
@@ -176,10 +180,13 @@
           color: #fff;
           font-size: 18px;
         }
-        @include Responsive($TABLE_DEVICE){
+        @include Responsive($TABLE_DEVICE) {
           margin-right: 10px;
         }
-        @include Responsive($WIDE_DEVICE){
+        @include Responsive($WIDE_DEVICE) {
+          margin-right: 10px;
+        }
+        @include Responsive($SMALL_DEVICE) {
           margin-right: 10px;
         }
       }
@@ -213,10 +220,13 @@
           top: 5px;
           left: 37px;
           line-height: 16px;
-          @include Responsive($TABLE_DEVICE){
+          @include Responsive($TABLE_DEVICE) {
             margin-left: 10px;
           }
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
+          }
+          @include Responsive($SMALL_DEVICE) {
             margin-left: 10px;
           }
         }
@@ -227,7 +237,11 @@
       @include Responsive($TABLE_DEVICE) {
         margin-right: 41px;
       }
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        margin-right: 31px;
+        margin-top: -12px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         margin-right: 31px;
         margin-top: -12px;
       }
@@ -271,7 +285,11 @@
       @include Responsive($TABLE_DEVICE) {
         margin-left: 60px;
       }
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      @include Responsive($SMALL_DEVICE) {
         margin-left: 30px;
         margin-top: 20px;
       }
@@ -318,12 +336,15 @@
         @include Responsive($TABLE_DEVICE) {
           display: none;
         }
+        @include Responsive($SMALL_DEVICE) {
+          display: none;
+        }
       }
       li:hover .header__menuFixed__dropdown {
         opacity: 1;
         visibility: visible;
       }
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
         display: none;
       }
     }
@@ -463,46 +484,53 @@
           top: 5px;
           left: 37px;
           line-height: 16px;
-          @include Responsive($TABLE_DEVICE){
+          @include Responsive($TABLE_DEVICE) {
             margin-left: 10px;
           }
-          @include Responsive($WIDE_DEVICE){
+          @include Responsive($WIDE_DEVICE) {
+            margin-left: 10px;
+          }
+          @include Responsive($SMALL_DEVICE) {
             margin-left: 10px;
           }
         }
-        @include Responsive($TABLE_DEVICE){
+        @include Responsive($TABLE_DEVICE) {
           margin-left: 10px;
         }
-        @include Responsive($WIDE_DEVICE){
+        @include Responsive($WIDE_DEVICE) {
+          margin-left: 10px;
+        }
+        @include Responsive($SMALL_DEVICE) {
           margin-left: 10px;
         }
       }
-      @include Responsive($TABLE_DEVICE){
-      }
-      @include Responsive($WIDE_DEVICE){
+      @include Responsive($WIDE_DEVICE) {
         margin-right: 25px;
       }
     }
     @include Responsive($DESKTOP) {
       display: flex;
       justify-content: center;
-      margin-left: 280px;
+      margin-left: 255px;
     }
     @include Responsive($MEDIUM_DEVICE) {
       display: flex;
       justify-content: flex-start;
       margin-left: 32px;
     }
-    @include Responsive($TABLE_DEVICE){
+    @include Responsive($TABLE_DEVICE) {
       margin-left: 465px;
-
     }
-    @include Responsive($WIDE_DEVICE){
+    @include Responsive($WIDE_DEVICE) {
       margin-left: 190px;
       margin-top: 4px;
     }
+    @include Responsive($SMALL_DEVICE) {
+      margin-left: 105px;
+      margin-top: 4px;
+    }
   }
-  @include Responsive($WIDE_DEVICE){
+  @include Responsive($WIDE_DEVICE) {
     height: 63px;
   }
 }
