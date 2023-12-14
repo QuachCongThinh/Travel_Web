@@ -96,6 +96,7 @@ const mockBannerData = {
   title: "Where do you want to go?",
   description: `Trips, experiences, and places. All in one service.`,
   imageUrl: "https://img.youtube.com/vi/JPe2mwq96cw/maxresdefault.jpg",
+  videoUrl: "https://www.youtube.com/watch?v=JPe2mwq96cw"
 };
 
 app.get("/banner", (req, res) => {
