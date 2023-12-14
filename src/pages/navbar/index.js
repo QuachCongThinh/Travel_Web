@@ -428,12 +428,24 @@ const Navbar = () => {
         menuBar.classList.toggle("active");
         body.classList.toggle("scroll__hide");
         wrapper.classList.toggle("blur");
+
+        document.addEventListener("click", handleClickOutside, true);
       };
       closeMenu.onclick = function () {
         menuBar.classList.remove("active");
         body.classList.remove("scroll__hide");
         wrapper.classList.remove("blur");
       };
+
+      function handleClickOutside(event) {
+        if (!menuBar.contains(event.target) && event.target !== closeMenu) {
+          menuBar.classList.remove("active");
+          body.classList.remove("scroll__hide");
+          wrapper.classList.remove("blur");
+
+          document.removeEventListener("click", handleClickOutside, true);
+        }
+      }
     });
   }, []);
 

@@ -71,6 +71,7 @@
       }
       .text_widget {
         .phone {
+          display: inline-block;
           svg {
             vertical-align: middle;
             margin-right: 10px;
@@ -82,6 +83,7 @@
           color: #cccccc;
         }
         .address {
+          display: inline-block;
           svg {
             margin-right: 10px;
             vertical-align: middle;
@@ -93,6 +95,7 @@
           color: #cccccc;
         }
         .time {
+          display: inline-block;
           svg {
             margin-top: 5px;
             vertical-align: middle;
@@ -104,10 +107,15 @@
           margin-top: 20px;
           color: #cccccc;
         }
+        @include Responsive($SMALL_DEVICE) {
+          width: 300px;
+        }
       }
       .social__icon {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
         list-style: none;
+        width: 200px;
         margin-top: 30px;
 
         .facebook {
@@ -218,7 +226,7 @@
         }
       }
       @include Responsive($MEDIUM_DEVICE) {
-        max-width: 400px;
+        max-width: 300px;
         width: 100%;
         margin-left: 0;
         padding: 0 25px 0 0;
@@ -238,6 +246,7 @@
         margin-left: 0;
         margin-top: 30px;
         padding: 0 0 0 25px;
+        width: 300px;
       }
     }
     .widget-3 {
@@ -268,7 +277,8 @@
             }
             @include Responsive($WIDE_DEVICE) {
               width: 100%;
-            } @include Responsive($SMALL_DEVICE) {
+            }
+            @include Responsive($SMALL_DEVICE) {
               width: 100%;
             }
           }
@@ -287,7 +297,7 @@
         padding: 0 25px;
       }
       @include Responsive($SMALL_DEVICE) {
-        width: 360px;
+        width: 357px;
         padding: 0 25px;
       }
     }
@@ -316,7 +326,8 @@
         @include Responsive($WIDE_DEVICE) {
           order: 2;
           margin-top: 10px;
-        }@include Responsive($SMALL_DEVICE) {
+        }
+        @include Responsive($SMALL_DEVICE) {
           order: 2;
           margin-top: 10px;
         }
@@ -355,7 +366,8 @@
         @include Responsive($WIDE_DEVICE) {
           display: grid;
           grid-template-columns: repeat(1, 1fr);
-        }@include Responsive($SMALL_DEVICE) {
+        }
+        @include Responsive($SMALL_DEVICE) {
           display: grid;
           grid-template-columns: repeat(1, 1fr);
         }
@@ -370,7 +382,8 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         padding: 0 25px;
-      }@include Responsive($SMALL_DEVICE) {
+      }
+      @include Responsive($SMALL_DEVICE) {
         margin-bottom: 20px;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -389,7 +402,8 @@
     @include Responsive($WIDE_DEVICE) {
       max-width: 1250px;
       width: 100%;
-    }@include Responsive($SMALL_DEVICE) {
+    }
+    @include Responsive($SMALL_DEVICE) {
       max-width: 1250px;
       width: 100%;
     }

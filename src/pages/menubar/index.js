@@ -6,7 +6,6 @@ import { SocialMenuBar } from "../../components/menuBar/socialMenuBar";
 import { fetchData } from "../../utils";
 import "../../pages/menubar/style.scss";
 
-
 const MobileMenu = () => {
   const [menus] = useState([
     {
@@ -438,21 +437,20 @@ const MobileMenu = () => {
       });
   }, []);
 
+
   return (
-    <>
-      <div id="main__menubar">
-        <div id="icon__menubar">
-          <a>
-            <span className="icon__xmark__closemenu">
-              <HiOutlineXMark />
-            </span>
-          </a>
-        </div>
-        <MenuBar />
-        <MenuTrips data={menuTrips} />
-        <SocialMenuBar data={social} />
+    <div id="main__menubar">
+      <div id="icon__menubar">
+        <a>
+          <span className="icon__xmark__closemenu">
+            <HiOutlineXMark />
+          </span>
+        </a>
       </div>
-    </>
+      <MenuBar />
+      <MenuTrips data={menuTrips} />
+      <SocialMenuBar data={social} />
+    </div>
   );
 };
 export default MobileMenu;

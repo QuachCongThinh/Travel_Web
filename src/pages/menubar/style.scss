@@ -65,61 +65,35 @@
       }
     }
   }
-  // .active{
-  //   display: block !important;
-  // }
+  .back {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    &::before {
+      font-family: "FontAwesome";
+      content: "\f104";
+      margin-right: 5px;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    &:hover {
+      color: #ff4a52;
+    }
+  }
+  .active {
+    display: block !important;
+  }
   .header__menu__dropdown {
     display: none;
     border-radius: 5px;
     margin-top: 25px;
-    // margin-left: -20px;
     width: 250px;
     font-size: 13px;
     font-weight: 500;
     line-height: 28px;
     z-index: 1;
     transition: all 0.2s ease;
-    // opacity: 0;
-    // visibility: hidden;
-    padding: 2px 8px;
-
-    // li {
-    //   .link__menu {
-    //     text-decoration: none;
-    //     color: #000;
-    //     font-size: 13px;
-    //     &::after {
-    //       font-family: "FontAwesome";
-    //       content: "\f105";
-    //       margin-top: 2px;
-    //       line-height: 20px;
-    //       float: right;
-    //     }
-    //   }
-    //   &::after {
-    //     content: "";
-    //     margin-top: 5px;
-    //     display: block;
-    //     border-bottom: 1px solid #dce0e0;
-    //   }
-    //   &:last-child::after {
-    //     content: "";
-    //     border: none;
-    //   }
-    //   .link_menu {
-    //     text-decoration: none;
-    //     color: #000;
-    //     font-size: 13px;
-    //     line-height: -5px;
-    //   }
-    //   :hover {
-    //     color: #ff4a52;
-    //   }
-    // }
-    // li:hover .header__menu__horizontal {
-    //   opacity: 1;
-    //   visibility: visible;
-    // }
   }
   .header__menu__horizontal {
     width: 222px;
@@ -307,10 +281,10 @@
       }
     }
   }
-  @include Responsive($WIDE_DEVICE){
+  @include Responsive($WIDE_DEVICE) {
     width: 270px;
   }
-  @include Responsive($SMALL_DEVICE){
+  @include Responsive($SMALL_DEVICE) {
     width: 270px;
   }
 }

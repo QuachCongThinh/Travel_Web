@@ -158,4 +158,7 @@
   @include Responsive($WIDE_DEVICE){
     display: none;
   }
+  @include Responsive($SMALL_DEVICE){
+    display: none;
+  }
 }

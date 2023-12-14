@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import images from "../../assets/images";
 import "./style.scss";
 import "../../style/all.scss";
@@ -414,43 +414,59 @@ const NavBarFixed = () => {
     },
   ]);
 
-  window.addEventListener("load", () => {
-    const openMenu = document.getElementById("logo__menu_fixed");
-    const menuBar = document.getElementById("main__menubar");
-    const closeMenu = document.getElementById("icon__menubar");
-    const body = document.querySelector("body");
-    const wrapper = document.getElementById("wrapper");
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      const openMenu = document.querySelector(
+        ".navbarFixed .navbar__menu_fixed .menu__cart #logo__menu_fixed svg"
+      );
+      const menuBar = document.getElementById("main__menubar");
+      const closeMenu = document.getElementById("icon__menubar");
+      const body = document.querySelector("body");
+      const wrapper = document.getElementById("wrapper");
 
-    openMenu.onclick = function () {
-      menuBar.classList.toggle("active");
-      body.classList.toggle("scroll__hide");
-      wrapper.classList.toggle("blur");
-    };
-    closeMenu.onclick = function () {
-      menuBar.classList.remove("active");
-      body.classList.remove("scroll__hide");
-      wrapper.classList.remove("blur");
-    };
-  });
+      openMenu.onclick = function () {
+        menuBar.classList.toggle("active");
+        body.classList.toggle("scroll__hide");
+        wrapper.classList.toggle("blur");
 
-  var prevScrollpos = window.scrollY;
-  window.onscroll = function () {
-    var currentScrollPos = window.scrollY;
-    if (prevScrollpos > currentScrollPos) {
-      document.querySelector(".navbarFixed").classList.add("show");
-    } else {
-      document.querySelector(".navbarFixed").classList.remove("show");
-    }
-    if (currentScrollPos === 0) {
-      document.querySelector(".navbarFixed").classList.add("hidden");
-    } else {
-      document.querySelector(".navbarFixed").classList.remove("hidden");
-    }
-    if (prevScrollpos < currentScrollPos) {
-      document.querySelector(".navbarFixed").classList.add("hidden");
-    }
-    prevScrollpos = currentScrollPos;
-  };
+        document.addEventListener("click", handleClickOutside, true);
+      };
+      closeMenu.onclick = function () {
+        menuBar.classList.remove("active");
+        body.classList.remove("scroll__hide");
+        wrapper.classList.remove("blur");
+      };
+
+      function handleClickOutside(event) {
+        if (!menuBar.contains(event.target) && event.target !== closeMenu) {
+          menuBar.classList.remove("active");
+          body.classList.remove("scroll__hide");
+          wrapper.classList.remove("blur");
+
+          document.removeEventListener("click", handleClickOutside, true);
+        }
+      }
+    });
+
+    var prevScrollpos = window.scrollY;
+    window.onscroll = function () {
+      var currentScrollPos = window.scrollY;
+      if (prevScrollpos > currentScrollPos) {
+        document.querySelector(".navbarFixed").classList.add("show");
+      } else {
+        document.querySelector(".navbarFixed").classList.remove("show");
+      }
+      if (currentScrollPos === 0) {
+        document.querySelector(".navbarFixed").classList.add("hidden");
+      } else {
+        document.querySelector(".navbarFixed").classList.remove("hidden");
+      }
+      if (prevScrollpos < currentScrollPos) {
+        document.querySelector(".navbarFixed").classList.add("hidden");
+      }
+      prevScrollpos = currentScrollPos;
+    };
+  }, []);
 
   return (
     <>

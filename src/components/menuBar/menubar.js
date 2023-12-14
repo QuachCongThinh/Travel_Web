@@ -1,6 +1,6 @@
 import "../../pages/menubar/style.scss";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import {useState } from "react";
 
 export function MenuBar() {
   const [menus] = useState([
@@ -410,11 +410,6 @@ export function MenuBar() {
     },
   ]);
 
-  window.onload = function () {
-    const menu = document.querySelectorAll("#menubar__menu ul li a");
-    console.log(menu);
-  };
-
   return (
     <div id="menubar__menu">
       <ul>
@@ -425,6 +420,7 @@ export function MenuBar() {
             </Link>
             {menu.child && (
               <ul className="header__menu__dropdown">
+                <div className="back">Back</div>
                 {menu.child.map((childItem, childKey) => (
                   <li key={`${menuKey}-${childKey}`}>
                     <Link
